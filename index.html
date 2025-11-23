@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EyASur.Ok - Fragancias y Vapers Gold</title>
+    
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUoen26zoSpe_oTRlnXL2jNAWe5wsnSlytKw&s" type="image/png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'e-dark': '#0a0a0a',       
+                        'e-panel': '#121212',      
+                        'e-text': '#F5F5F5',       
+                        'e-gold': '#D4AF37',       
+                        'e-rosegold': '#E0BFB8',   
+                        'e-silver': '#C0C0C0',     
+                        'e-bronze': '#cd7f32',     
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'], 
+                        serif: ['Playfair Display', 'serif'], 
+                    },
+                }
+            }
+        }
+    </script>  
+    
+    <style>
+        /* Importación de imagen */
+       @import url('https://disfragancias.com/cdn/shop/articles/envato-labs-ai-214adbf0-56f6-4e7e-a959-63afb6bff051_1024x1024.jpg?v=1750277775');
+      
+        /* Fondo adaptable, centrado y con zoom más notorio */
+        .background-zoom-effect {
+            position: absolute; top: 0; left: 0;width: 100%; height: 100%;
+            background-image: url('https://disfragancias.com/cdn/shop/articles/envato-labs-ai-214adbf0-56f6-4e7e-a959-63afb6bff051_1024x1024.jpg?v=1750277775');
+            background-size: cover; 
+            background-position: center center; 
+            background-repeat: no-repeat;
+            /* MODIFICACIÓN: Animación más rápida y notoria */
+            transform: scale(1.0); animation: zoom-in-out 10s infinite alternate ease-in-out;
+            filter: brightness(0.4);
+        }
+        /* MODIFICACIÓN: Zoom final más intenso (de 1.0 a 1.25) */
+        @keyframes zoom-in-out { from { transform: scale(1.0); } to { transform: scale(1.25); } }
+
+        .shiny-border-box {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            /* MODIFICACIÓN: Fondo más transparente (0.3) */
+            background: rgba(10, 10, 10, 0.3); backdrop-filter: blur(0.1px); 
+            transition: all 0.4s ease;
+        }
+        .shiny-border-box:hover { box-shadow: 0 0 40px rgba(212, 175, 55, 0.6); border-color: #D4AF37; }
+
+        .font-serif-fancy { font-family: 'Playfair Display', serif; letter-spacing: 1px; }
+        .font-sans-elegant { font-family: 'Montserrat', sans-serif; }
+        body { background-color: #0a0a0a; }
+
+        .product-card {
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            background-size: cover; background-position: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+
+        .luxury-gradient {
+            background: linear-gradient(to right, #D4AF37, #F8F1D2, #D4AF37);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-size: 200% auto; animation: shine 4s linear infinite;
+        }
+        @keyframes shine { to { background-position: 200% center; } }
+
+        .mobile-menu { transition: max-height 0.4s ease-in-out, opacity 0.4s; max-height: 0; overflow: hidden; opacity: 0; }
+        .mobile-menu.open { max-height: 300px; opacity: 1; }
+        
+        input, textarea {
+            background-color: rgba(255,255,255,0.05) !important;
+            border: 1px solid rgba(212, 175, 55, 0.3) !important;
+            color: #F5F5F5 !important;
+        }
+        input:focus, textarea:focus {
+            border-color: #D4AF37 !important; outline: none;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3) !important;
+        }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #121212; }
+        ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-e-dark font-sans text-e-text">
+
+    <div id="notification-container" class="fixed top-4 right-4 z-50 space-y-3"></div>
+
+    <header class="bg-e-dark/95 backdrop-blur-md text-e-text shadow-2xl sticky top-0 z-40 border-b border-e-gold/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                
+                <div class="flex items-center">
+                    <a href="#" class="text-3xl md:text-4xl font-serif-fancy luxury-gradient font-bold tracking-widest">
+                        EyASur.Ok
+                    </a>
+                </div>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-e-silver hover:text-e-gold transition duration-300 text-sm font-bold uppercase tracking-widest">Inicio</a>
+                    <a href="#featured-products" class="text-e-silver hover:text-e-gold transition duration-300 text-sm font-bold uppercase tracking-widest">Productos</a>
+                    <a href="#about-us" class="text-e-silver hover:text-e-gold transition duration-300 text-sm font-bold uppercase tracking-widest">Nosotros</a>
+                    <a href="#instagram-cta" class="text-e-silver hover:text-e-gold transition duration-300 text-sm font-bold uppercase tracking-widest">Novedades</a>
+                    <a href="#contact" class="text-e-silver hover:text-e-gold transition duration-300 text-sm font-bold uppercase tracking-widest">Contacto</a>
+                    
+                    <a href="https://www.instagram.com/eyasur.ok" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-e-gold/50 rounded-full hover:bg-e-gold/10 transition duration-300 group">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-e-gold group-hover:text-pink-500 transition-colors"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        <span class="text-e-gold text-xs font-bold uppercase group-hover:text-e-text transition-colors">Visítanos en Instagram</span>
+                    </a>
+                </nav>
+
+                <div class="flex items-center space-x-5">
+                    <button onclick="openCart()" class="relative p-2 hover:scale-110 transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-e-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-red-600 text-white text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center">0</span>
+                    </button>
+                    
+                    <button onclick="toggleMobileMenu()" class="md:hidden text-e-gold">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                    </button>
+                </div>
+            </div>
+
+            <nav id="mobile-menu-links" class="mobile-menu md:hidden pb-6 bg-e-dark border-t border-gray-800">
+                <a href="#" class="mobile-link block px-4 py-3 text-e-silver hover:bg-gray-900 hover:text-e-gold text-sm uppercase tracking-widest">Inicio</a>
+                <a href="#featured-products" class="mobile-link block px-4 py-3 text-e-silver hover:bg-gray-900 hover:text-e-gold text-sm uppercase tracking-widest">Productos</a>
+                <a href="#about-us" class="mobile-link block px-4 py-3 text-e-silver hover:bg-gray-900 hover:text-e-gold text-sm uppercase tracking-widest">Nosotros</a>
+                <a href="#instagram-cta" class="mobile-link block px-4 py-3 text-e-silver hover:bg-gray-900 hover:text-e-gold text-sm uppercase tracking-widest">Novedades</a>
+                <a href="#contact" class="mobile-link block px-4 py-3 text-e-silver hover:bg-gray-900 hover:text-e-gold text-sm uppercase tracking-widest">Contacto</a>
+                <a href="https://www.instagram.com/eyasur.ok" target="_blank" class="mobile-link block px-4 py-3 text-e-gold hover:bg-gray-900 font-bold text-sm uppercase tracking-widest">
+                    Visitanos en Instagram
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="relative py-32 md:py-48 px-4 flex items-center justify-center text-center overflow-hidden">
+            <div class="background-zoom-effect"></div>
+            <div class="relative z-10 p-10 md:p-16 max-w-5xl mx-auto rounded-sm shiny-border-box">
+                <h1 class="text-5xl md:text-7xl font-serif-fancy mb-6 text-e-gold drop-shadow-lg">
+                    Fragancias y Vapers <br/><span class="text-white text-4xl md:text-6xl italic">Exclusivos</span>
+                </h1>
+                <p class="text-lg md:text-xl text-e-silver mb-12 font-sans-elegant tracking-wide max-w-2xl mx-auto">
+                    Descubrí y explorá las esencias y vaporizadores más buscados. Envíos seguros a todo el país 🇦🇷
+                </p>
+                <a href="#featured-products" class="inline-block bg-e-gold text-black font-bold py-4 px-10 rounded-sm hover:bg-white transition duration-500 tracking-widest text-sm uppercase shadow-[0_0_20px_rgba(212,175,55,0.5)] hover:shadow-[0_0_30px_rgba(255,255,255,0.6)]">
+                    Ver Colección
+                </a>
+            </div>
+        </section>
+
+        <section id="featured-products" class="py-20 px-4 bg-e-dark">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-serif-fancy text-center mb-16 text-e-gold">Selección Premium</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    
+                    <div class="product-card h-96 rounded-sm relative group overflow-hidden"
+                         style="background-image: url('https://img.freepik.com/premium-photo/luxurious-perfume-bottle-with-golden-details-dark-background_7023-421979.jpg?w=360');">
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-8 text-center">
+                            <h3 class="text-lg font-serif-fancy text-white mb-2">Probá nuestros exquisitos perfumes de 35ml a un precio súper económico. 
+                            Si te enamora la fragancia, pedí la versión de 100ml y hacela tuya para siempre!</h3>
+                            <h3 class="text-3xl font-serif-fancy text-white mb-2">Perfumes</h3>
+                            <button onclick="addToCart(1, 'Fragancia 35ml', 8500)"
+                                    class="mb-4 inline-block border border-e-gold text-e-gold px-6 py-2 rounded-sm font-bold backdrop-blur-sm cursor-pointer hover:bg-e-gold hover:text-black transition duration-300">
+                                $8.500 | Agregar al carrito
+                            </button>
+                            <a href="https://drive.google.com/drive/folders/1oicP2WPBuu1qh_xikUgPzfr5AsU30A9S" target="_blank" 
+                                class="block w-full text-e-gold border border-e-gold/50 py-2 text-sm font-bold uppercase hover:bg-e-gold/10 transition duration-300">
+                                Mirá las fragancias disponibles en nuestro Drive
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-card h-96 rounded-sm relative group overflow-hidden"
+                         style="background-image: url('https://elfvapebrasil.com/wp-content/uploads/2025/05/o-que-e-overheating-.png');">
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-8 text-center">
+                            <h3 class="text-lg font-serif-fancy text-white mb-2">Seleccionamos solo lo mejor: desde frutales intensos y mentolados refrescantes hasta tabaquiles frutales.
+                            Encontrá la excelencia en cada marca y sabor!</h3>
+                            <h3 class="text-3xl font-serif-fancy text-white mb-2">Vapers</h3>
+                            <button onclick="addToCart(2, 'Vaper Recargable', 40000)"
+                                    class="mb-4 inline-block border border-e-gold text-e-gold px-6 py-2 rounded-sm font-bold backdrop-blur-sm cursor-pointer hover:bg-e-gold hover:text-black transition duration-300">
+                                $40.000 | Agregar al carrito
+                            </button>
+                            <a href="https://drive.google.com/drive/folders/1AgxIDLQ0YsVmG3q1OefIcq0hJaHqvnib" target="_blank" 
+                                class="block w-full text-e-gold border border-e-gold/50 py-2 text-sm font-bold uppercase hover:bg-e-gold/10 transition duration-300">
+                                Mirá los sabores disponibles en nuestro Drive
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-card h-96 rounded-sm relative group overflow-hidden"
+                         style="background-image: url('https://media.istockphoto.com/id/1366568938/photo/three-black-gift-boxes.jpg?s=612x612&w=0&k=20&c=0fIIMIIpdmw3b3cFSo3yC_wRPYp67J4ZLQ0RhA31MdQ=');">
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-8 text-center">
+                            <h3 class="text-lg font-serif-fancy text-white mb-2">Set Deluxe 3 en 1: Tu dosis de Lujo Diario. Incluye dos fragancias de 35ml + un vaper con sabor a elección de marca top.
+                            Perfecto para regalar o darte el gusto</h3>
+                            <h3 class="text-3xl font-serif-fancy text-white mb-2">Set de Lujo</h3>
+                            <button onclick="addToCart(3, 'Set de Lujo Premium', 70000)"
+                                    class="mb-4 inline-block border border-e-gold text-e-gold px-6 py-2 rounded-sm font-bold backdrop-blur-sm cursor-pointer hover:bg-e-gold hover:text-black transition duration-300">
+                                $70.000 | Agregar al carrito
+                            </button>
+                            <a href="https://thumbs.dreamstime.com/b/regalo-de-perfume-lujo-para-mujeres-fragancia-%C3%A1mbar-caja-negra-cinta-seda-dorada-presentaci%C3%B3n-elegante-en-una-con-un-lujoso-y-la-386760814.jpg" target="_blank" 
+                                class="block w-full text-e-gold border border-e-gold/50 py-2 text-sm font-bold uppercase hover:bg-e-gold/10 transition duration-300">
+                                Mirá cómo quedaría tu Set
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-us" class="py-20 px-4 bg-e-panel border-t border-e-gold/20">
+            <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 text-left">
+                    <h2 class="text-4xl font-serif-fancy text-e-gold mb-6">Sobre Nosotros</h2>
+                    <div class="w-16 h-1 bg-e-gold mb-6"></div>
+                    <p class="text-e-silver text-lg leading-relaxed mb-4 font-sans-elegant">
+                        ❤️ En <span class="text-e-text font-bold">EyASur.Ok</span>, nos dedicamos a la comercialización de <span class="text-e-gold">Fragancias y Vapers Recargables</span>.
+                    </p>
+                    <p class="text-e-silver text-lg leading-relaxed mb-4 font-sans-elegant">
+                        ☺️ Nos especializamos en las fragancias importadas más exclusivas (principalmente en presentaciones de 35ml y 100ml) y en dispositivos recargables de vapeo desechables (Hasta 40.000 Caladas o puffs) de mayor calidad y tendencia actual (Trabajamos Marcas premium como <span class="text-e-gold">ElfBar, Ignite y LostMary</span>).
+                    </p>
+                    <p class="text-e-silver text-lg leading-relaxed font-sans-elegant">
+                        🔔 Porque queremos que nos vuelvas a elegir, Tenemos como objetivo buscar <span class="text-e-gold">la satisfacción del cliente</span>, por lo que garantizamos un asesoramiento completo y una experiencia de compra <span class="text-e-gold">segura y confiable</span>.
+                    </p>
+                    <p class="text-e-silver text-lg leading-relaxed font-sans-elegant">
+                        Estamos en <span class="text-e-gold">Zona Sur</span>, pero podemos coordinar retiros o envíos <span class="text-e-gold">siempre a cargo del comprador</span>.
+                    </p>
+                </div>
+                <div class="md:w-1/2 w-full">
+                    <div class="relative p-1 bg-gradient-to-tr from-e-gold to-transparent rounded-lg">
+                        <div class="bg-e-dark p-8 rounded-lg border border-e-gold/20 text-center shadow-2xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-e-gold mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                            </svg>
+                            <h3 class="text-2xl text-white font-serif-fancy mb-2">Calidad Gold</h3>
+                            <p class="text-gray-400 text-sm">Conocé los productos que son tendencia.</p>
+                            <!-- Botón/Link a YouTube. Se abre en una nueva pestaña (_blank) -->
+                        <a 
+                            href="https://youtube.com/shorts/1r-OVtCOXJg?si=-S7CPoi3G-3wRfxW" 
+                            target="_blank" 
+                            class="inline-flex items-center justify-center px-6 py-2 text-sm font-semibold text-white bg-red-600 rounded-full hover:bg-red-700 transition duration-300 shadow-xl shadow-red-900/50 hover:scale-[1.03] transform focus:outline-none focus:ring-4 focus:ring-red-500 focus:ring-opacity-50"
+                        >
+                            <svg class="w-5 h-5 mr-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-5-8a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm4-5a1 1 0 00-1 1v4a1 1 0 001 1h2a1 1 0 001-1V6a1 1 0 00-1-1h-2z" clip-rule="evenodd" />
+                                <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+                                <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a3 3 0 013-3h.001A3 3 0 0113 9v2a3 3 0 01-3 3h-.001A3 3 0 017 11V9z" />
+                            </svg>
+                            También estamos en YouTube
+                        </a>
+                            <!-- Hasta acá el Botón/Link a YouTube. Se abre en una nueva pestaña (_blank) -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="instagram-cta" class="py-16 px-4 bg-e-dark border-t border-gray-900">
+            <div class="max-w-4xl mx-auto text-center shiny-border-box p-8">
+                <h3 class="text-2xl font-serif-fancy text-white mb-6">
+                    Mantenete actualizado con nuestras novedades en Fragancias y Vaporizadores y no te pierdas ninguna de nuestras historias.
+                </h3>
+                <a href="https://www.instagram.com/eyasur.ok" target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-3 px-8 rounded-sm hover:opacity-90 transition shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    Seguinos en Instagram
+                </a>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 px-4 bg-e-dark border-t border-gray-900">
+            <div class="max-w-2xl mx-auto bg-e-panel p-10 rounded-sm border border-gray-800 shadow-2xl">
+                <h2 class="text-3xl font-serif-fancy text-center mb-10 text-e-text">Contacto Directo</h2>
+                
+                <form id="contact-form" action="https://formsubmit.co/eyasur.ok@gmail.com" method="POST" target="hidden-iframe" onsubmit="return handleContactSubmit()">
+                    
+                    <input type="hidden" name="_subject" value="Nuevo Mensaje de Contacto">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-e-gold mb-2">Nombre</label>
+                            <input type="text" name="name" required class="w-full px-4 py-3 rounded-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-e-gold mb-2">Email</label>
+                            <input type="email" name="email" required class="w-full px-4 py-3 rounded-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-e-gold mb-2">Mensaje</label>
+                            <textarea name="message" rows="4" required class="w-full px-4 py-3 rounded-sm"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-e-gold text-black font-bold py-4 uppercase tracking-widest hover:bg-white transition duration-300">
+                            Enviar Mensaje
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-gray-500 py-10 text-center border-t border-gray-900">
+        <p class="text-sm">&copy; 2025-2026 EyASur.Ok. Todos los derechos reservados.</p>
+        <p class="text-xs mt-2 text-e-gold/50">Diseño Gold por EDM</p>
+        <p class="text-xs mt-2 text-e-gold/50">Este sitio fué creado con Amor ❤️</p>
+    </footer>
+
+    <div id="cart-modal" class="fixed inset-0 bg-black/90 z-50 hidden justify-center items-center p-4 backdrop-blur-sm">
+        <div class="bg-e-panel border border-e-gold/30 w-full max-w-lg rounded-sm shadow-2xl">
+            <div class="p-6">
+                <div class="flex justify-between items-center border-b border-gray-700 pb-4 mb-4">
+                    <h3 class="text-2xl font-serif-fancy text-e-gold">Tu Selección</h3>
+                    <button onclick="closeCart()" class="text-gray-400 hover:text-white text-3xl">&times;</button>
+                </div>
+                
+                <div id="cart-items-list" class="max-h-64 overflow-y-auto space-y-4 mb-6 pr-2"></div>
+                
+                <p id="empty-cart-message" class="text-center text-gray-500 py-4">El carrito está vacío.</p>
+
+                <div class="pt-4 border-t border-gray-700">
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-lg text-gray-300">Total:</span>
+                        <span id="cart-total" class="text-2xl font-bold text-e-gold">$0.00</span>
+                    </div>
+                    <button id="btn-init-checkout" onclick="openCheckout()" disabled class="w-full bg-e-gold text-black font-bold py-3 uppercase tracking-widest hover:bg-white transition disabled:opacity-50 disabled:cursor-not-allowed">
+                        Iniciar Compra
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="checkout-modal" class="fixed inset-0 bg-black/95 z-[60] hidden justify-center items-center p-4 backdrop-blur-md">
+        <div class="bg-e-panel border border-e-gold/50 w-full max-w-md rounded-sm shadow-2xl animate-fade-in">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-serif-fancy text-white">Finalizar Pedido</h3>
+                    <button onclick="closeCheckout()" class="text-gray-400 hover:text-white text-2xl">&times;</button>
+                </div>
+
+                <div class="mb-8 text-center bg-black/40 p-4 rounded border border-e-gold/20">
+                    <p class="text-gray-400 text-xs uppercase tracking-widest">Total a Pagar</p>
+                    <p id="checkout-total-display" class="text-3xl font-serif-fancy text-e-gold mt-1">$0.00</p>
+                </div>
+
+                <form id="order-form" action="https://formsubmit.co/eyasur.ok@gmail.com" method="POST" target="hidden-iframe" onsubmit="return handleOrderSubmit()">
+                    
+                    <input type="hidden" name="_subject" value="NUEVO PEDIDO DE VENTA - EyASur">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    
+                    <input type="hidden" name="Numero_Orden" id="hidden-order-id">
+                    <input type="hidden" name="Detalle_Pedido" id="hidden-order-details">
+                    <input type="hidden" name="Monto_Total" id="hidden-order-total">
+                    <input type="hidden" name="_cc" id="hidden-customer-cc">
+                    <input type="hidden" name="Mensaje_Importante" value="En breve nos pondremos en contacto con vos. Si no realizaste éste pedido por favor descartá este correo"
+                        
+                    <div class="space-y-4">
+                        <div>
+                            <label class="text-xs text-e-gold uppercase">Nombre Completo</label>
+                            <input type="text" name="Nombre" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
+                        </div>
+                        <div>
+                            <label class="text-xs text-e-gold uppercase">Email</label>
+                            <input type="email" name="Email" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
+                        </div>
+                        <div>
+                            <label class="text-xs text-e-gold uppercase">Whatsapp / Teléfono</label>
+                            <input type="text" name="Telefono" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
+                        </div>
+                        <button type="submit" class="w-full mt-4 bg-e-gold text-black font-bold py-3 uppercase hover:bg-white transition shadow-[0_0_15px_rgba(212,175,55,0.4)]">
+                            Confirmar y Enviar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="final-modal" class="fixed inset-0 bg-black/95 z-[70] hidden justify-center items-center p-4">
+        <div class="bg-e-panel border-t-4 border-e-gold w-full max-w-md p-8 text-center shadow-2xl rounded-sm">
+            <div class="mb-4 text-e-gold flex justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <h3 class="text-3xl font-serif-fancy text-white mb-2">¡Pedido Enviado!</h3>
+            <p class="text-gray-400 mb-8">Ya recibimos tu pedido. En breve recibirás un correo de confirmación
+                    para Finalizar los detalles de pago y entrega. También podes escribinos por Instagram con el número de Orden.</p>
+            
+            <div class="space-y-3">
+                <button onclick="finishProcess('instagram')" class="w-full py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold rounded-sm hover:opacity-90 transition flex justify-center items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    Ir a Instagram
+                </button>
+                <button onclick="finishProcess('shop')" class="w-full py-3 bg-transparent border border-gray-600 text-gray-300 hover:text-white hover:border-white transition">
+                    Seguir Comprando
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <iframe name="hidden-iframe" style="display:none;"></iframe>
+
+    <script>
+        // Variables
+        let cart = [];
+        let currentOrderNumber = ''; // Ahora es un string de fecha/hora
+        const INSTAGRAM_URL = "https://www.instagram.com/eyasur.ok";
+
+        // --- SISTEMA DE ORDEN (Formato #HHMM-DDMM) ---
+        function generateTimeBasedOrderNumber() {
+            const now = new Date();
+            
+            // HH (12-hour format)
+            let hours = now.getHours();
+            hours = hours % 12; 
+            hours = hours ? hours : 12; // 0 (medianoche) se convierte a 12
+            
+            const HH = String(hours).padStart(2, '0');
+            const MM_minutes = String(now.getMinutes()).padStart(2, '0');
+            const DD = String(now.getDate()).padStart(2, '0');
+            // getMonth() es 0-index, por eso se suma 1
+            const MM_month = String(now.getMonth() + 1).padStart(2, '0'); 
+
+            return `#${HH}${MM_minutes}-${DD}${MM_month}`;
+        }
+        
+        // --- MENÚ MÓVIL AUTOMÁTICO ---
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu-links').classList.remove('open');
+            });
+        });
+
+        // --- CARRITO ---
+        window.addToCart = function(id, name, price) {
+            const existingItem = cart.find(item => item.id === id);
+            if (existingItem) {
+                existingItem.qty++;
+            } else {
+                cart.push({ id: id, name: name, price: price, qty: 1 });
+            }
+            renderCart();
+            showNotification(`Agregaste: ${name}`, 'success');
+        };
+
+        window.updateQty = function(index, change) {
+            if (cart[index].qty + change <= 0) {
+                cart.splice(index, 1);
+            } else {
+                cart[index].qty += change;
+            }
+            renderCart();
+        };
+
+        window.removeFromCart = function(index) {
+            cart.splice(index, 1);
+            renderCart();
+        };
+
+        function renderCart() {
+            const list = document.getElementById('cart-items-list');
+            const emptyMsg = document.getElementById('empty-cart-message');
+            const totalEl = document.getElementById('cart-total');
+            const countEl = document.getElementById('cart-count');
+            const checkoutBtn = document.getElementById('btn-init-checkout');
+
+            let total = 0;
+            let count = 0;
+            
+            list.innerHTML = '';
+
+            if (cart.length === 0) {
+                emptyMsg.style.display = 'block';
+                checkoutBtn.disabled = true;
+                checkoutBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            } else {
+                emptyMsg.style.display = 'none';
+                checkoutBtn.disabled = false;
+                checkoutBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+
+                cart.forEach((item, index) => {
+                    total += item.price * item.qty;
+                    count += item.qty;
+
+                    const div = document.createElement('div');
+                    div.className = 'flex justify-between items-center bg-black/40 p-3 rounded border border-gray-700';
+                    div.innerHTML = `
+                        <div>
+                            <p class="font-bold text-white text-sm">${item.name}</p>
+                            <p class="text-xs text-e-gold">$${item.price} c/u</p>
+                        </div>
+                        <div class="flex items-center gap-3 bg-e-dark border border-gray-600 rounded px-2 py-1">
+                            <button onclick="updateQty(${index}, -1)" class="text-gray-400 hover:text-white font-bold text-lg px-1">-</button>
+                            <span class="text-white font-bold text-sm w-4 text-center">${item.qty}</span>
+                            <button onclick="updateQty(${index}, 1)" class="text-e-gold hover:text-white font-bold text-lg px-1">+</button>
+                        </div>
+                    `;
+                    list.appendChild(div);
+                });
+            }
+
+            const formattedTotal = `$${total.toLocaleString('es-AR')}`;
+            totalEl.innerText = formattedTotal;
+            countEl.innerText = count;
+            
+            // MODIFICACIÓN ÚNICA SOLICITADA: Ocultar el contador si el carrito está vacío
+            if (count === 0) {
+                countEl.style.display = 'none';
+            } else {
+                // Asegurar que el display sea visible (flex, como estaba definido por las clases de Tailwind)
+                countEl.style.display = 'flex'; 
+            }
+
+            document.getElementById('checkout-total-display').innerText = formattedTotal;
+            document.getElementById('hidden-order-total').value = formattedTotal;
+            
+            // Si es la primera ejecución, asegurar que esté oculto si el carrito está vacío
+            if(count === 0) {
+                countEl.style.display = 'none';
+            }
+        }
+
+        // Ejecutar renderCart en la carga para inicializar el contador
+        document.addEventListener('DOMContentLoaded', renderCart);
+
+        // --- MODALES ---
+        window.openCart = function() { document.getElementById('cart-modal').classList.replace('hidden', 'flex'); };
+        window.closeCart = function() { document.getElementById('cart-modal').classList.replace('flex', 'hidden'); };
+
+        window.openCheckout = function() {
+            closeCart();
+             // Generar el nuevo número de orden basado en tiempo/fecha
+            currentOrderNumber = generateTimeBasedOrderNumber();
+            
+            document.getElementById('hidden-order-id').value = currentOrderNumber;
+            
+            const detalles = cart.map(i => `${i.name} (Cant: ${i.qty}) - $${i.price * i.qty}`).join(' | ');
+            document.getElementById('hidden-order-details').value = detalles;
+            
+            document.getElementById('checkout-modal').classList.replace('hidden', 'flex');
+        };
+        window.closeCheckout = function() { document.getElementById('checkout-modal').classList.replace('flex', 'hidden'); };
+        window.closeFinalModal = function() { document.getElementById('final-modal').classList.replace('flex', 'hidden'); };
+
+        // --- MANEJO DE FORMULARIOS ---
+        window.handleContactSubmit = function() {
+            setTimeout(() => {
+                document.getElementById('contact-form').reset();
+                showNotification('Mensaje Enviado. En breve nos pondremos en contacto para responder tu consulta ☺️', 'success');
+            }, 1500);
+            return true;
+        };
+
+        window.handleOrderSubmit = function() {
+            // MODIFICACIÓN (anterior): Obtener el email del cliente y asignarlo al campo _cc para la copia del mail
+            const customerEmail = document.querySelector('input[name="Email"]').value;
+            document.getElementById('hidden-customer-cc').value = customerEmail; 
+            
+            setTimeout(() => {
+                closeCheckout();
+                document.getElementById('final-modal').classList.replace('hidden', 'flex');
+                cart = [];
+                renderCart();
+                document.getElementById('order-form').reset();
+            }, 1000);
+            return true;
+        };
+
+        // --- ACCIÓN FINAL (Instagram o Shop) Y NOTIFICACIÓN DE ORDEN ---
+        window.finishProcess = function(action) {
+            closeFinalModal();
+
+            
+            const orderMsg = `Tu pedido ya fué enviado ☺️. En breve recibirás un correo de confirmación. Tu número de orden es: ${currentOrderNumber}`;
+            // MODIFICACIÓN Verificar a partir de acá OJOOOO.!!!
+            // MODIFICACIÓN (anterior): Guardar la notificación para hacerla persistente
+            localStorage.setItem('eyasur_pending_order_notification', JSON.stringify({
+                msg: orderMsg,
+                type: 'order'
+            }));
+            
+            showNotification(orderMsg, 'order'); 
+            // MODIFICACIÓN Verificar Hasta acá OJOOOO.!!!
+            if (action === 'instagram') {
+                setTimeout(() => {
+                    window.open(INSTAGRAM_URL, '_blank');
+                }, 1500);
+            }
+        };
+
+        window.toggleMobileMenu = function() {
+            document.getElementById('mobile-menu-links').classList.toggle('open');
+        };
+
+        // --- NOTIFICACIONES CON PERSISTENCIA ---
+        function showNotification(msg, type) {
+            const container = document.getElementById('notification-container');
+            const div = document.createElement('div');
+            
+            let borderClass = type === 'success' ? 'border-green-500' : (type === 'order' ? 'border-blue-500' : 'border-e-gold');
+            let icon = type === 'success' ? '✨' : (type === 'order' ? '🧾' : '🔔');
+
+            div.className = `bg-e-panel border-l-4 ${borderClass} text-white px-4 py-4 shadow-2xl rounded-sm animate-bounce flex items-center justify-between gap-4 min-w-[300px] pointer-events-auto`;
+            div.style.animation = "fadeIn 0.5s";
+            
+            div.innerHTML = `
+                <div class="flex items-center gap-2">
+                    <span class="text-xl">${icon}</span>
+                    <p class="font-bold text-sm">${msg}</p>
+                </div>
+                <button class="text-gray-400 hover:text-white font-bold px-2">✕</button>
+            `;
+            
+            container.appendChild(div);
+            
+            const closeButton = div.querySelector('button');
+
+            if (type !== 'order') {
+                // Notificaciones temporales (5 segundos)
+                closeButton.onclick = function() { div.remove(); };
+                setTimeout(() => {
+                    if(div.parentNode) div.remove();
+                }, 5000);
+            } else {
+                // Notificación persistente
+                closeButton.onclick = function(e) {
+                    e.preventDefault(); 
+                    div.remove();
+                    localStorage.removeItem('eyasur_pending_order_notification');
+                };
+            }
+        }
+        
+        // --- INICIAR VERIFICACIÓN DE NOTIFICACIONES PENDIENTES ---
+        function checkPersistentNotification() {
+            const stored = localStorage.getItem('eyasur_pending_order_notification');
+            if (stored) {
+                const data = JSON.parse(stored);
+                showNotification(data.msg, data.type); 
+            }
+        }
+
+        // Ejecutar al cargar la página
+        document.addEventListener('DOMContentLoaded', checkPersistentNotification);
+    </script>
+</body>
+</html>
