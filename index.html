@@ -99,6 +99,48 @@
         ::-webkit-scrollbar-track { background: #121212; }
         ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 4px; }
     </style>
+
+
+    
+<style>       
+       /* --- Estilos para la Nueva Sección (Fondo de Imagen) --- */
+        #como-comprar {
+    background-image: url('https://images.news18.com/static-bengali/uploads/2025/06/Pilot-4-2025-06-e22e94df4355d95abaf8586780b9a702.jpg?impolicy=website&width=827&height=620'); /* ¡IMPORTANTE! Reemplaza con tu URL */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Asegúrate de que tenga una altura mínima para que la imagen se vea */
+    min-height: 400px; 
+    
+    position: relative; /* Necesario para posicionar el overlay */
+    z-index: 1; /* Asegura que el contenido quede encima del fondo */
+}
+
+/* --- Estilos para el Overlay Negro Semitransparente (El Cuadro Traslúcido) --- */
+        #como-comprar .background-overlay-negro {
+    content: ""; /* Obligatorio para pseudoelementos, aunque aquí lo usaremos en un div */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Fondo Negro Semitransparente (ajusta el 0.6 a tu gusto) */
+    background-color: rgba(0, 0, 0, 0.1); 
+    
+    z-index: -1; /* Coloca el overlay detrás del texto y el cuadro principal */
+}
+
+/* Asegura que el contenido (h2, p, etc.) esté por encima del overlay */
+        #como-comprar .relative.z-10 {
+    z-index: 2; /* Un z-index mayor que el del overlay (-1 o el que sea) */
+}
+        
+        </style>
+
+
+    
 </head>
 <body class="bg-e-dark font-sans text-e-text">
 
