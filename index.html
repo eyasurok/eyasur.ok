@@ -100,7 +100,7 @@
         ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 4px; }
     </style>
     
- <style>          
+ <style>       
        /* --- Estilos para la Nueva Sección (Fondo de Imagen) --- */
         #como-comprar {
     background-image: url('https://images.news18.com/static-bengali/uploads/2025/06/Pilot-4-2025-06-e22e94df4355d95abaf8586780b9a702.jpg?impolicy=website&width=827&height=620'); /* ¡IMPORTANTE! Reemplaza con tu URL */
@@ -109,7 +109,7 @@
     background-repeat: no-repeat;
     
     /* Asegúrate de que tenga una altura mínima para que la imagen se vea */
-    min-height: 400px; 
+    min-height: 250px; 
     
     position: relative; /* Necesario para posicionar el overlay */
     z-index: 1; /* Asegura que el contenido quede encima del fondo */
@@ -136,7 +136,42 @@
 }
         
         </style>
+<!--Ajuste para separar las secciones (Inicio, Cómo Comprar, Productos, Sobre nosotros, Instagram y Contacto)--> 
+    <style>
+/* ... (Tus estilos actuales para #como-comprar) ... */
 
+/* --- Adaptación para Móviles (Espaciado Compacto) --- */
+@media (max-width: 768px) {
+    
+    /* Anula los grandes "py-XX" de Tailwind en todas las secciones */
+    section {
+        /* Un relleno vertical moderado (reduce 128px a 40px) */
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+    
+    /* 1. Sección de INICIO (la más grande) */
+    #inicio {
+        /* Mantenemos un poco más de espacio aquí para que el héroe destaque */
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+
+    /* 2. Sección CÓMO COMPRAR */
+    #como-comprar {
+        /* Anula la clase mt-12 (margin-top: 3rem / 48px) de Tailwind */
+        margin-top: 0 !important;
+    }
+
+    /* 3. Sección de Novedades (Instagram CTA) */
+    #instagram-cta {
+        /* Reducimos aún más el espacio para CTA pequeño */
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+    }
+}
+</style>
+    
 </head>
 <body class="bg-e-dark font-sans text-e-text">
 
@@ -209,18 +244,18 @@
                 </a>
             </div>
         </section>
-        
-          <section id="como-comprar" class="relative py-24 md:py-32 px-4 flex items-center justify-center text-center overflow-hidden mt-12">
+
+        <section id="como-comprar" class="relative py-24 md:py-32 px-4 flex items-center justify-center text-center overflow-hidden mt-12">
     
                 <div class="background-overlay-negro"></div>
-    
-                <div class="relative z-10 p-10 md:p-16 max-w-5xl mx-auto rounded-sm shiny-border-box bg-black/50">
-        
+                
+                   <div class="relative z-10 p-10 md:p-16 max-w-5xl mx-auto rounded-sm shiny-border-box bg-black/50">
+                       
                     <h2 class="text-5xl md:text-7xl font-serif-fancy mb-6 text-e-gold drop-shadow-lg">
                         Cómo Comprar.!
                     </h2>
         
-                    <div class="max-w-2xl mx-auto"> <p class="text-base text-e-silver mb-4 font-sans-elegant">
+                   <div class="max-w-2xl mx-auto"> <p class="text-base text-e-silver mb-4 font-sans-elegant">
                         🛒 ¡Es Súper Simple!
                         </p>
                         <p class="text-lg text-e-gold mb-2 font-bold font-sans-elegant">
@@ -230,11 +265,11 @@
                         Tenemos tres categorías con los precios detallados:
                         </p>
     
-                        <ul class="text-base text-e-silver mb-4 font-sans-elegant ml-4 list-disc space-y-1">
+                        <ul id="lista-categorias" class="text-base text-e-silver mb-4 font-sans-elegant list-disc space-y-1">
                         ✨ PERFUMES
-                        <ul class="text-base text-e-silver mb-4 font-sans-elegant ml-4 list-disc space-y-1">
+                        <ul id="lista-categorias" class="text-base text-e-silver mb-4 font-sans-elegant list-disc space-y-1">
                         💨 VAPERS
-                        <ul class="text-base text-e-silver mb-4 font-sans-elegant ml-4 list-disc space-y-1">
+                        <ul id="lista-categorias" class="text-base text-e-silver mb-4 font-sans-elegant list-disc space-y-1">
                         💎 SET DE LUJO
     
                         <p class="text-base text-e-silver mb-8 font-sans-elegant">
@@ -247,7 +282,8 @@
                         <p class="text-base text-e-silver mb-2 font-sans-elegant">
                         Cuando encuentres algo que te encante en el Drive, volvé a la página y hacé clic en "Añadir al Carrito".
                         </p>
-                        <p class="text-base text-e-gold mb-8 font-sans-elegant border border-e-gold/75 p-3 rounded-md bg-black/75">
+                        <!--Anterior<p class="text-base text-e-gold mb-8 font-sans-elegant border border-e-gold/75 p-3 rounded-md bg-black/75">-->
+                        <p class="text-base text-e-gold mb-8 font-sans-elegant border border-e-gold/75 py-2 px-2 rounded-md bg-black/75">
                         ⚠️ IMPORTANTE: Al finalizar el proceso de compra, verás un cuadro de texto para completar Nombre,E-mail,WhatsApp/Teléfono y Producto. Es OBLIGATORIO que allí completes los datos y que en "Producto" especifiques también el NOMBRE EXACTO del Perfume o Vaper que viste en el Drive (ej: Perfume 'Cool Girl').
                         </p>
 
@@ -265,11 +301,11 @@
                         TU COMPRA SÓLO SE CONCRETA Y ABONA CUANDO TE CONTACTAMOS NOSOTROS. ¡Así de fácil! ☺️
                         </p>
     
-                    </div>
+                   </div>
         
                 </div>
         </section>
-
+        
         <section id="featured-products" class="py-20 px-4 bg-e-dark">
             <div class="max-w-7xl mx-auto">
                 <h2 class="text-4xl font-serif-fancy text-center mb-16 text-e-gold">Selección Premium</h2>
@@ -280,7 +316,7 @@
                          style="background-image: url('https://img.freepik.com/premium-photo/luxurious-perfume-bottle-with-golden-details-dark-background_7023-421979.jpg?w=360');">
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition duration-500"></div>
                         <div class="absolute bottom-0 left-0 right-0 p-8 text-center">
-                            <h3 class="text-lg font-serif-fancy text-white mb-2">Probá nuestros exquisitos perfumes de 35ml a un precio súper económico. 
+                            <h3 class="text-sm font-serif-fancy text-white mb-2">Probá nuestros exquisitos perfumes de 35ml a un precio súper económico. 
                             Si te enamora la fragancia, pedí la versión de 100ml y hacela tuya para siempre! (Aromas exclusivos para tu día a día)</h3>
                             <h3 class="text-3xl font-serif-fancy text-white mb-2">Perfumes</h3>
                             <button onclick="addToCart(1, 'Fragancia 35ml', 8500)"
@@ -298,7 +334,7 @@
                          style="background-image: url('https://elfvapebrasil.com/wp-content/uploads/2025/05/o-que-e-overheating-.png');">
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition duration-500"></div>
                         <div class="absolute bottom-0 left-0 right-0 p-8 text-center">
-                            <h3 class="text-lg font-serif-fancy text-white mb-2">Seleccionamos solo lo mejor: desde frutales intensos y mentolados refrescantes hasta tabaquiles frutales.
+                            <h3 class="text-sm font-serif-fancy text-white mb-2">Seleccionamos solo lo mejor: desde frutales intensos y mentolados refrescantes hasta tabaquiles frutales.
                             Encontrá la excelencia en cada marca y sabor! (Lo último en tecnología de vapeo)</h3>
                             <h3 class="text-3xl font-serif-fancy text-white mb-2">Vapers</h3>
                             <button onclick="addToCart(2, 'Vaper Recargable', 40000)"
@@ -316,7 +352,7 @@
                          style="background-image: url('https://media.istockphoto.com/id/1366568938/photo/three-black-gift-boxes.jpg?s=612x612&w=0&k=20&c=0fIIMIIpdmw3b3cFSo3yC_wRPYp67J4ZLQ0RhA31MdQ=');">
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition duration-500"></div>
                         <div class="absolute bottom-0 left-0 right-0 p-8 text-center">
-                            <h3 class="text-lg font-serif-fancy text-white mb-2">Set Deluxe 3 en 1: Tu dosis de Lujo Diario. La caja incluye 2 Fragancias de 35ml + 1 Vaper con sabor a elección de Marca Top + Sorpresa 🤫
+                            <h3 class="text-sm font-serif-fancy text-white mb-2">Set Deluxe 3 en 1: Tu dosis de Lujo Diario. La caja incluye 2 Fragancias de 35ml + 1 Vaper con sabor a elección de Marca Top + Sorpresa 🤫
                             Perfecto para regalar o darte el gusto. Todos van a envidiar tu regalo 😉</h3>
                             <h3 class="text-3xl font-serif-fancy text-white mb-2">Set de Lujo</h3>
                             <button onclick="addToCart(3, 'Set de Lujo Premium', 70000)"
@@ -454,7 +490,7 @@
         </div>
     </div>
 
-<!--Finalizar Pedido-->                           
+<!--Finalizar Pedido--> 
     <div id="checkout-modal" class="fixed inset-0 bg-black/95 z-[60] hidden justify-center items-center p-4 backdrop-blur-md">
         <div class="bg-e-panel border border-e-gold/50 w-full max-w-md rounded-sm shadow-2xl animate-fade-in">
             <div class="p-8">
@@ -490,10 +526,10 @@
                             <input type="email" name="Email" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
                         </div>
                         <div>
-                            <label class="text-xs text-e-gold uppercase">WhatsApp / Teléfono</label>
+                            <label class="text-xs text-e-gold uppercase">Whatsapp / Teléfono</label>
                             <input type="text" name="Telefono" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
                         </div>
-                         <div>
+                        <div>
                             <label class="text-xs text-e-gold uppercase">Producto</label>
                             <input type="text" name="Producto" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
                         </div>
@@ -516,7 +552,7 @@
                     para finalizar los detalles de pago y plazos de entrega de tus productos.</p>
             
             <div class="space-y-3">
-               <!--
+                <!--
                 <button onclick="finishProcess('instagram')" class="w-full py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold rounded-sm hover:opacity-90 transition flex justify-center items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                     Ir a Instagram
