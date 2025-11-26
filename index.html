@@ -136,6 +136,41 @@
 }
         
         </style>
+
+    <style>
+/* ... (Tus estilos actuales para #como-comprar) ... */
+
+/* --- Adaptación para Móviles (Espaciado Compacto) --- */
+@media (max-width: 768px) {
+    
+    /* Anula los grandes "py-XX" de Tailwind en todas las secciones */
+    section {
+        /* Un relleno vertical moderado (reduce 128px a 40px) */
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+    
+    /* 1. Sección de INICIO (la más grande) */
+    #inicio {
+        /* Mantenemos un poco más de espacio aquí para que el héroe destaque */
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+
+    /* 2. Sección CÓMO COMPRAR */
+    #como-comprar {
+        /* Anula la clase mt-12 (margin-top: 3rem / 48px) de Tailwind */
+        margin-top: 0 !important;
+    }
+
+    /* 3. Sección de Novedades (Instagram CTA) */
+    #instagram-cta {
+        /* Reducimos aún más el espacio para CTA pequeño */
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+    }
+}
+</style>
     
 </head>
 <body class="bg-e-dark font-sans text-e-text">
