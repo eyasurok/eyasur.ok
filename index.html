@@ -721,20 +721,52 @@
             return true;
         };
 
-        window.handleOrderSubmit = function() {
-            // MODIFICACIÓN (anterior): Obtener el email del cliente y asignarlo al campo _cc para la copia del mail
-            const customerEmail = document.querySelector('input[name="Email"]').value;
-            document.getElementById('hidden-customer-cc').value = customerEmail; 
-            
-            setTimeout(() => {
-                closeCheckout();
-                document.getElementById('final-modal').classList.replace('hidden', 'flex');
-                cart = [];
-                renderCart();
-                document.getElementById('order-form').reset();
-            }, 1000);
-            return true;
-        };
+window.handleOrderSubmit = function() {
+    
+    // =======================================================
+    // 1. VALIDACIÓN DEL TELÉFONO (¡Tiene que ser lo primero!)
+    // =======================================================
+    const telefonoInput = document.querySelector('[name="Telefono"]');
+    const telefonoValor = telefonoInput.value.replace(/\s/g, ''); // Limpiamos espacios
+
+    // Validamos que tenga al menos 8 dígitos
+    if (telefonoValor.length < 8) {
+        alert("¡Che, el teléfono parece muy corto! Por favor, revisá y volvé a ingresar el número completo.");
+        
+        telefonoInput.focus(); 
+        
+        return false; // <-- Si falla la validación, DETIENE el envío y el resto del JS.
+    }
+
+    // =======================================================
+    // 2. ASIGNACIÓN FINAL DE DATOS (Solo si pasó la validación)
+    // =======================================================
+    
+    // Corregido: Usamos el campo _replyto para obtener el email.
+    const customerEmail = document.querySelector('input[name="_replyto"]').value;
+    document.getElementById('hidden-customer-cc').value = customerEmail; 
+
+    // =======================================================
+    // 3. ANIMACIÓN Y RESETEO (Código de Post-Envío)
+    // =======================================================
+    
+    // Esto se ejecuta con un retraso de 1 segundo (mientras el formulario se envía a FormSubmit)
+    setTimeout(() => {
+        closeCheckout();
+        // Muestra el modal de "Pedido Enviado"
+        document.getElementById('final-modal').classList.replace('hidden', 'flex'); 
+        
+        // Resetea el carrito y el formulario
+        cart = [];
+        renderCart();
+        document.getElementById('order-form').reset();
+    }, 1000); 
+    
+    // =======================================================
+    // 4. PERMITIR ENVÍO A FORMSUBMIT
+    // =======================================================
+    return true; // <-- Permite que el navegador envíe el formulario a la URL de FormSubmit.
+};
 
         // --- ACCIÓN FINAL (Instagram o Shop) Y NOTIFICACIÓN DE ORDEN ---
         window.finishProcess = function(action) {
