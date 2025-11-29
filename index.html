@@ -743,7 +743,7 @@ window.handleOrderSubmit = function() {
     // =======================================================
     
     // Corregido: Usamos el campo _replyto para obtener el email.
-    const customerEmail = document.querySelector('input[name="_replyto"]').value;
+    const customerEmail = document.querySelector('input[name="_autoreply_replyto"]').value;
     document.getElementById('hidden-customer-cc').value = customerEmail; 
 
     // =======================================================
