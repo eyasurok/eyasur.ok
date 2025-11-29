@@ -799,6 +799,16 @@
             document.getElementById('mobile-menu-links').classList.toggle('open');
         };
 
+            // 1. Función para que envíe el pedido
+        function handleOrderSubmit() {
+            // 1. Cargar los datos ocultos (ejemplo)
+            document.getElementById('hidden-order-total').value = calcularTotal(); 
+    
+            // 2. ¡MUY IMPORTANTE! Devolver siempre true al final
+            return true; 
+        }
+
+        
         // --- NOTIFICACIONES CON PERSISTENCIA ---
         function showNotification(msg, type) {
             const container = document.getElementById('notification-container');
