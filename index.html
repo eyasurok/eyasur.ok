@@ -259,10 +259,10 @@
                         🛒 ¡Es Súper Simple!
                         </p>
                         <p class="text-lg text-e-gold mb-2 font-bold font-sans-elegant">
-                        1. 🔍 Explora y Elegí tu Producto
+                        1. 🔍 Elegí tu Producto
                         </p>
                         <p class="text-base text-e-silver mb-2 font-sans-elegant">
-                        Tenemos tres categorías con los precios detallados:
+                        Tenemos tres categorías:
                         </p>
     
                         <ul id="lista-categorias" class="text-base text-e-silver mb-4 font-sans-elegant list-disc space-y-1">
@@ -284,7 +284,7 @@
                         </p>
                         <!--Anterior<p class="text-base text-e-gold mb-8 font-sans-elegant border border-e-gold/75 p-3 rounded-md bg-black/75">-->
                         <p class="text-base text-e-gold mb-8 font-sans-elegant border border-e-gold/75 py-2 px-2 rounded-md bg-black/75">
-                        ⚠️ IMPORTANTE: Al finalizar el proceso de compra, verás un cuadro de texto para completar Nombre,E-mail,WhatsApp/Teléfono y Producto. Es OBLIGATORIO que allí completes los datos y que en "Producto" especifiques también el NOMBRE EXACTO del Perfume o Vaper que viste en el Drive (ej: Perfume 'Cool Girl').
+                        ⚠️ IMPORTANTE: Al finalizar el proceso de compra, verás un cuadro de texto para completar. Es OBLIGATORIO que allí completes los datos y que, en "Producto" especifiques también el NOMBRE EXACTO del Perfume o Vaper que elegiste en el Drive (ej: Perfume 'Cool Girl').
                         </p>
 
                         <p class="text-lg text-e-gold mb-2 font-bold font-sans-elegant">
@@ -295,10 +295,10 @@
                         ¡Tranquilo! La página NO te pedirá datos de tarjeta, transferencias ni realizará cobros.
                         </p>
                         <p class="text-base text-e-silver mb-4 font-sans-elegant">
-                        Revisaremos el detalle de tu pedido y nos contactaremos personalmente con vos (vía WhatsApp o Correo) para confirmar tu producto y coordinar el método de pago y el envío.
+                        Procesaremos tu pedido y nos contactaremos personalmente con vos (vía WhatsApp o Correo) para confirmar tu producto y coordinar el método de pago y el envío.
                         </p>
                         <p class="text-base text-e-gold font-bold font-sans-elegant">
-                        TU COMPRA SÓLO SE CONCRETA Y ABONA CUANDO TE CONTACTAMOS NOSOTROS. ¡Así de fácil! ☺️
+                        TU COMPRA SÓLO SE CONCRETA Y ABONA CUANDO TE CONTACTAMOS NOSOTROS.       ¡Así de fácil! ☺️
                         </p>
     
                    </div>
@@ -323,7 +323,7 @@
                                     class="mb-4 inline-block border border-e-gold text-e-gold px-6 py-2 rounded-sm font-bold backdrop-blur-sm cursor-pointer hover:bg-e-gold hover:text-black transition duration-300">
                                 $8.500 | Agregar al carrito
                             </button>
-                            <a href="https://drive.google.com/drive/folders/1lC_YZSHGROkvpWj5Qn7HOmhVmLf-LS1b" target="_blank" 
+                            <a href="https://drive.google.com/drive/folders/1lC_YZSHGROkvpWj5Qn7HOmhVmLf-LS1b" target="_blank"  
                                 class="block w-full text-e-gold border border-e-gold/50 py-2 text-sm font-bold uppercase hover:bg-e-gold/10 transition duration-300">
                                 Mirá las fragancias disponibles en nuestro Drive
                             </a>
@@ -505,58 +505,20 @@
                 </div>
 
                 <form id="order-form" action="https://formsubmit.co/eyasur.ok@gmail.com" method="POST" target="hidden-iframe" onsubmit="return handleOrderSubmit()">
-    
-                        <input type="hidden" name="_subject" value="Nuevo Pedido - EyASur.Ok">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
-    
-                        <input type="hidden" name="_replytoname" value="EyASur.Ok - Tienda Online">     
-                        <input type="hidden" name="_autoresponse" value="¡Gracias! Recibimos tu pedido. Nos contactamos pronto para coordinar. EyASur.Ok.">
-                        <input type="hidden" name="_autoreply_replyto" value="eyasur.ok@gmail.com">
-                        <input type="hidden" name="Importante" value="Si no realizaste este pedido por favor descartá este Correo"
-                            
-                        <input type="hidden" name="Numero_Orden" id="hidden-order-id">
-                        <input type="hidden" name="Detalle_Pedido" id="hidden-order-details">
-                        <input type="hidden" name="Monto_Total" id="hidden-order-total">
-                        <input type="hidden" name="_cc" id="hidden-customer-cc">                        
-                        
-    
-                        <div class="space-y-4">
-                            <div>
-                                <label class="text-xs text-e-gold uppercase">Nombre Completo</label>
-                                <input type="text" name="Nombre" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
-                            </div>
-                            <div>
-                                <label class="text-xs text-e-gold uppercase">Email</label>
-                                <input type="email" name="_replyto" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
-                            </div>
-                            <div>
-                                <label class="text-xs text-e-gold uppercase">Whatsapp / Teléfono</label>
-                                <input type="text" name="Telefono" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
-                            </div>
-                            <div>
-                                <label class="text-xs text-e-gold uppercase">Producto</label>
-                                <input type="text" name="Producto" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
-                            </div>
-                            <button type="submit" class="w-full mt-4 bg-e-gold text-black font-bold py-3 uppercase hover:bg-white transition shadow-[0_0_15px_rgba(212,175,55,0.4)]">
-                                Confirmar y Enviar
-                            </button>
-                        </div>
-                    </form>
 
-<!-- Método viejo                               
-                <form id="order-form" action="https://formsubmit.co/eyasur.ok@gmail.com" method="POST" target="hidden-iframe" onsubmit="return handleOrderSubmit()">
-                    
+                    <input type="hidden" name="_replytoname" value="EyASur.Ok - Tienda Online">
                     <input type="hidden" name="_subject" value="Nuevo Pedido - EyASur.Ok">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_default" value="Realizaste un nuevo pedido en https://eyasurok.github.io/">
+
+                    <input type="hidden" name="_autoreply_replyto" value="eyasur.ok@gmail.com">
                     
                     <input type="hidden" name="Numero_Orden" id="hidden-order-id">
                     <input type="hidden" name="Detalle_Pedido" id="hidden-order-details">
                     <input type="hidden" name="Monto_Total" id="hidden-order-total">
                     <input type="hidden" name="_cc" id="hidden-customer-cc">
-                    <input type="hidden" name="Mensaje" value="ATENTI: Nos pondremos en contacto con vos a través de WhatsApp o Mail para coordinar los detalles de tu pedido."
-                    <input type="hidden" name="Importante" value="Si no realizaste este pedido por favor descartá este Correo"
+                    <input type="hidden" name="Importante" value="¡Gracias por tu pedido! Recibimos tu solicitud. Nos contactaremos pronto para coordinar. EyASur.Ok"
                         
                     <div class="space-y-4">
                         <div>
@@ -579,14 +541,12 @@
                             Confirmar y Enviar
                         </button>
                     </div>
-                </form>-->  
+                </form>
             </div>
         </div>
     </div>
 
-<!-- ejemplo-->   
-            
-      <div id="final-modal" class="fixed inset-0 bg-black/95 z-[70] hidden justify-center items-center p-4">
+    <div id="final-modal" class="fixed inset-0 bg-black/95 z-[70] hidden justify-center items-center p-4">
         <div class="bg-e-panel border-t-4 border-e-gold w-full max-w-md p-8 text-center shadow-2xl rounded-sm">
             <div class="mb-4 text-e-gold flex justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
@@ -607,7 +567,6 @@
             </div>
         </div>
     </div>
-
 
     <iframe name="hidden-iframe" style="display:none;"></iframe>
 
@@ -764,7 +723,7 @@
 
         window.handleOrderSubmit = function() {
             // MODIFICACIÓN (anterior): Obtener el email del cliente y asignarlo al campo _cc para la copia del mail
-            const customerEmail = document.querySelector('input[name="_replyto"]').value;
+            const customerEmail = document.querySelector('input[name="Email"]').value;
             document.getElementById('hidden-customer-cc').value = customerEmail; 
             
             setTimeout(() => {
@@ -803,16 +762,6 @@
             document.getElementById('mobile-menu-links').classList.toggle('open');
         };
 
-            // 1. Función para que envíe el pedido
-        function handleOrderSubmit() {
-            // 1. Cargar los datos ocultos (ejemplo)
-            document.getElementById('hidden-order-total').value = calcularTotal(); 
-    
-            // 2. ¡MUY IMPORTANTE! Devolver siempre true al final
-            return true; 
-        }
-
-        
         // --- NOTIFICACIONES CON PERSISTENCIA ---
         function showNotification(msg, type) {
             const container = document.getElementById('notification-container');
