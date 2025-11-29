@@ -512,7 +512,7 @@
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_default" value="Realizaste un nuevo pedido en https://eyasurok.github.io/">
 
-                    <input type="hidden" name="_autoreply_replyto" value="eyasur.ok@gmail.com">
+                    <!--<input type="hidden" name="_autoreply_replyto" value="eyasur.ok@gmail.com">-->
                     
                     <input type="hidden" name="Numero_Orden" id="hidden-order-id">
                     <input type="hidden" name="Detalle_Pedido" id="hidden-order-details">
@@ -526,8 +526,8 @@
                             <input type="text" name="Nombre" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
                         </div>
                         <div>
-                            <label class="text-xs text-e-gold uppercase">Email</label>
-                            <input type="email" name="Email" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
+                            <label class="text-xs text-e-gold uppercase">Email</label>                        
+                            <input type="email" name="Email" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">-
                         </div>
                         <div>
                             <label class="text-xs text-e-gold uppercase">Whatsapp / Teléfono</label>
@@ -745,6 +745,7 @@ window.handleOrderSubmit = function() {
     // Corregido: Usamos el campo _replyto para obtener el email.
     const customerEmail = document.querySelector('input[name="_autoreply_replyto"]').value;
     document.getElementById('hidden-customer-cc').value = customerEmail; 
+    // <--const customerEmailInput = document.querySelector('input[name="Email"]').value;
 
     // =======================================================
     // 3. ANIMACIÓN Y RESETEO (Código de Post-Envío)
