@@ -504,7 +504,45 @@
                     <p id="checkout-total-display" class="text-3xl font-serif-fancy text-e-gold mt-1">$0.00</p>
                 </div>
 
-                <form id="order-form" action="https://formsubmit.co/eyasur.ok@gmail.com" method="POST" target="hidden-iframe" onsubmit="return handleOrderSubmit()">
+<!-- Nuevo metodo de Gemini-->                 
+<form id="order-form" action="https://formsubmit.co/eyasur.ok@gmail.com" method="POST" target="hidden-iframe" onsubmit="return handleOrderSubmit()">
+    
+    <input type="hidden" name="_subject" value="Nuevo Pedido - EyASur.Ok">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    
+    <input type="hidden" name="Numero_Orden" id="hidden-order-id">
+    <input type="hidden" name="Detalle_Pedido" id="hidden-order-details">
+    <input type="hidden" name="Monto_Total" id="hidden-order-total">
+    <input type="hidden" name="_cc" id="hidden-customer-cc">
+    <input type="hidden" name="Mensaje" value="ATENTI: Nos pondremos en contacto con vos a través de WhatsApp o Mail para coordinar los detalles de tu pedido."
+    <input type="hidden" name="Importante" value="Si no realizaste este pedido por favor descartá este Correo"
+    
+    <div class="space-y-4">
+        <div>
+            <label class="text-xs text-e-gold uppercase">Nombre Completo</label>
+            <input type="text" name="Nombre" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
+        </div>
+        <div>
+            <label class="text-xs text-e-gold uppercase">Email</label>
+            <input type="email" name="_replyto" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
+        </div>
+        <div>
+            <label class="text-xs text-e-gold uppercase">Whatsapp / Teléfono</label>
+            <input type="text" name="Telefono" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
+        </div>
+        <div>
+            <label class="text-xs text-e-gold uppercase">Producto</label>
+            <input type="text" name="Producto" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
+        </div>
+        <button type="submit" class="w-full mt-4 bg-e-gold text-black font-bold py-3 uppercase hover:bg-white transition shadow-[0_0_15px_rgba(212,175,55,0.4)]">
+            Confirmar y Enviar
+        </button>
+    </div>
+</form>
+
+<!--Método anterior para el envío de correos                 
+<form id="order-form" action="https://formsubmit.co/eyasur.ok@gmail.com" method="POST" target="hidden-iframe" onsubmit="return handleOrderSubmit()">
                     
                     <input type="hidden" name="_subject" value="Nuevo Pedido - EyASur.Ok">
                     <input type="hidden" name="_captcha" value="false">
@@ -514,7 +552,8 @@
                     <input type="hidden" name="Detalle_Pedido" id="hidden-order-details">
                     <input type="hidden" name="Monto_Total" id="hidden-order-total">
                     <input type="hidden" name="_cc" id="hidden-customer-cc">
-                    <input type="hidden" name="Mensaje_Importante" value="ESTATE ATENTO: En breve nos pondremos en contacto con vos a través de WhatsApp o Mail para coordinar los detalles de tu pedido. Si no realizaste éste pedido por favor descartá este Correo"
+                    <input type="hidden" name="Mensaje" value="ATENTI: Nos pondremos en contacto con vos a través de WhatsApp o Mail para coordinar los detalles de tu pedido."
+                    <input type="hidden" name="Importante" value="Si no realizaste este pedido por favor descartá este Correo"
                         
                     <div class="space-y-4">
                         <div>
@@ -538,6 +577,10 @@
                         </button>
                     </div>
                 </form>
+            -->
+
+<!-- Hasta acá el uevo metodo de Gemini-->  
+            
             </div>
         </div>
     </div>
