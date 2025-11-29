@@ -760,7 +760,7 @@
 
         window.handleOrderSubmit = function() {
             // MODIFICACIÓN (anterior): Obtener el email del cliente y asignarlo al campo _cc para la copia del mail
-            const customerEmail = document.querySelector('input[name="Email"]').value;
+            const customerEmail = document.querySelector('input[name="_replyto"]').value;
             document.getElementById('hidden-customer-cc').value = customerEmail; 
             
             setTimeout(() => {
