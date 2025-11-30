@@ -730,7 +730,7 @@ window.handleOrderSubmit = function() {
     const telefonoValor = telefonoInput.value.replace(/\s/g, ''); // Limpiamos espacios
 
     // Validamos que tenga al menos 8 dígitos
-    if (telefonoValor.length < 8) {
+    if (telefonoValor.length < 10) {
         alert("¡Ingrese un teléfono válido e intente nuevamente por favor!");
         
         telefonoInput.focus(); 
