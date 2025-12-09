@@ -633,10 +633,13 @@
                             <label class="text-xs text-e-gold uppercase">Nombre Completo</label>
                             <input type="text" name="Nombre" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
                         </div>
-                        <div>
-                            <label class="text-xs text-e-gold uppercase">Email</label>             
-                            <input type="email" name="Email" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
-                        </div>
+                        <div class="relative"> <label class="text-xs text-e-gold uppercase" for="emailInput">Email</label>   
+                            <input type="email" id="emailInput" name="Email" required 
+                             class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold pr-10">                                
+                            <span id="checkIcon"                                
+                             class="absolute right-3 transform -translate-y-1/2 text-green-500 text-lg hidden" style="top: 70%;"> ✓
+                            </span>
+                        </div>  
                         <div>
                             <label class="text-xs text-e-gold uppercase">Whatsapp / Teléfono</label>
                             <input type="text" name="Telefono" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
