@@ -516,6 +516,54 @@
 
 
 
+<!-- EJEMPLOS DE PRODUCTOS EN STOCK ----------------------------------------------------------------------------
+                
+ <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+     style="background-image: url('URL_DEL_PRODUCTO');"
+     onclick="openModal('URL_DEL_PRODUCTO')">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">COMPLETAR CON NOMBRE DE FRAGANCIA/VAPER/BOX</h3>
+         <button onclick="event.stopPropagation(); addToCart(415, 'Ameerat Al Arab 35ml', 6000)"
+                class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
+                    $6000 | Agregar
+         </button>     
+    </div>
+</div>
+                
+
+                
+<!--EJEMPLOS DE PRODUCTOS SIN STOCK ----------------------------------------------------------------------------
+                
+<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+     style="background-image: url('URL_DEL_PRODUCTO');"
+     onclick="openModal('URL_DEL_PRODUCTO')">
+<div class="absolute inset-0 z-20 flex items-center justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">COMPLETAR CON NOMBRE DE FRAGANCIA/VAPER/BOX</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $PRECIO SIN PUNTO | Agotado
+        </button>                 
+    </div>
+</div>
+
+
+----------------------------------------------------------------------------------------------------------------                
+-->
+
+
+
+
+                
+
+
                 
                 
             </div>
@@ -594,8 +642,8 @@
                             <input type="text" name="Telefono" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
                         </div>
                         <div>
-                            <label class="text-xs text-e-gold uppercase">Producto</label>
-                            <input type="text" name="Producto" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
+                            <label class="text-xs text-e-gold uppercase">Observaciones</label>
+                            <input type="text" name="Observaciones" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
                         </div>
                         <button type="submit" class="w-full mt-4 bg-e-gold text-black font-bold py-3 uppercase hover:bg-white transition shadow-[0_0_15px_rgba(212,175,55,0.4)]">
                             Confirmar y Enviar
