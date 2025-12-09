@@ -936,6 +936,40 @@
         });
 
 
+
+// --- FUNCIÓN PARA QUE SE TILDE SI EL CORREO ESTÁ BIEN ESCRITO ---
+document.addEventListener('DOMContentLoaded', (event) => {
+        const emailInput = document.getElementById('emailInput');
+        const checkIcon = document.getElementById('checkIcon');
+
+        // Escuchamos cada vez que se presiona y suelta una tecla
+        emailInput.addEventListener('keyup', function() {
+            
+            // 1. Verificamos si el campo cumple con type="email"
+            if (this.checkValidity()) {
+                
+                // Si es VÁLIDO (tiene @ y punto) y NO está vacío
+                if (this.value.length > 0) {
+                    checkIcon.classList.remove('hidden'); // Muestra el tilde
+                } else {
+                    checkIcon.classList.add('hidden');
+                }
+                
+            } else {
+                // Si es INVÁLIDO, lo ocultamos
+                checkIcon.classList.add('hidden');
+            }
+        });
+    });
+
+
+
+
+
+
+        
+
+
         // Función para ABRIR el modal
 function openModal(imageUrl) {
     const modal = document.getElementById('imageModal');
