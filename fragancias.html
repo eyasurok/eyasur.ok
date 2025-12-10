@@ -201,21 +201,56 @@
 
 <!--HTML PARA EL FILTRO-->
 
-            <div id="controles-filtro" class="flex justify-center space-x-4 p-4">
-    <button onclick="filtrarCatalogo('todos')" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
+            <div id="filtro-genero-botones" class="flex justify-center space-x-4 p-4 mt-4">
+    <button onclick="aplicarFiltros('genero', 'todos', this)" 
+            class="filtro-btn px-4 py-2 rounded-lg font-bold transition duration-300 shadow-lg bg-gray-500 text-white hover:bg-gray-600">
         Todos
     </button>
-    <button onclick="filtrarCatalogo('femenino')" class="bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition">
+    <button onclick="aplicarFiltros('genero', 'femenino', this)" 
+            class="filtro-btn px-4 py-2 rounded-lg font-bold transition duration-300 shadow-lg bg-e-gold text-black hover:bg-yellow-600">
         Mujer
     </button>
-    <button onclick="filtrarCatalogo('masculino')" class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 transition">
+    <button onclick="aplicarFiltros('genero', 'masculino', this)" 
+            class="filtro-btn px-4 py-2 rounded-lg font-bold transition duration-300 shadow-lg bg-blue-500 text-white hover:bg-blue-600">
         Hombre
     </button>
-    <button onclick="filtrarCatalogo('unisex')" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition">
+    <button onclick="aplicarFiltros('genero', 'unisex', this)" 
+            class="filtro-btn px-4 py-2 rounded-lg font-bold transition duration-300 shadow-lg bg-e-copper text-white hover:bg-orange-600">
         Unisex
     </button>
 </div>
 
+<div id="filtro-volumen-botones" class="flex flex-wrap justify-center space-x-2 p-4 border-t border-gray-700 mt-4">
+    <span class="text-white font-bold self-center mr-2">Volumen:</span>
+    <button onclick="aplicarFiltros('volumen', 'todos', this)" 
+            class="filtro-btn-vol px-3 py-1 text-sm rounded-full font-bold transition duration-300 shadow-md bg-gray-500 text-white hover:bg-gray-600">
+        Todos
+    </button>
+    <button onclick="aplicarFiltros('volumen', '30ml', this)" 
+            class="filtro-btn-vol px-3 py-1 text-sm rounded-full font-bold transition duration-300 shadow-md bg-e-gold text-black hover:bg-yellow-600">
+        30ml
+    </button>
+    <button onclick="aplicarFiltros('volumen', '35ml', this)" 
+            class="filtro-btn-vol px-3 py-1 text-sm rounded-full font-bold transition duration-300 shadow-md bg-e-gold text-black hover:bg-yellow-600">
+        35ml
+    </button>
+    <button onclick="aplicarFiltros('volumen', '50ml', this)" 
+            class="filtro-btn-vol px-3 py-1 text-sm rounded-full font-bold transition duration-300 shadow-md bg-e-gold text-black hover:bg-yellow-600">
+        50ml
+    </button>
+    <button onclick="aplicarFiltros('volumen', '88ml', this)" 
+            class="filtro-btn-vol px-3 py-1 text-sm rounded-full font-bold transition duration-300 shadow-md bg-e-gold text-black hover:bg-yellow-600">
+        88ml
+    </button>
+    <button onclick="aplicarFiltros('volumen', '100ml', this)" 
+            class="filtro-btn-vol px-3 py-1 text-sm rounded-full font-bold transition duration-300 shadow-md bg-e-gold text-black hover:bg-yellow-600">
+        100ml
+    </button>
+    <button onclick="aplicarFiltros('volumen', '250ml', this)" 
+            class="filtro-btn-vol px-3 py-1 text-sm rounded-full font-bold transition duration-300 shadow-md bg-e-gold text-black hover:bg-yellow-600">
+        250ml
+    </button>
+</div>
 
 
             
@@ -1915,35 +1950,64 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
  // FUNCION PARA EL FILTRO
 
-        function filtrarCatalogo(filtroSeleccionado) {
-    // 1. Conseguimos TODAS las tarjetas de perfume (product-card)
+        let filtroGeneroActual = 'todos'; // Estado inicial del filtro de género
+let filtroVolumenActual = 'todos'; // Estado inicial del filtro de volumen
+
+// Función principal para aplicar filtros
+function aplicarFiltros(tipoFiltro, valor, elementoBoton) {
+    
+    // 1. Actualizar el estado del filtro y resetear el color de los botones inactivos
+    if (tipoFiltro === 'genero') {
+        filtroGeneroActual = valor;
+        // Quita la clase 'activo' a todos los botones de género
+        document.querySelectorAll('#filtro-genero-botones button').forEach(btn => {
+            btn.classList.remove('ring-4', 'ring-offset-2', 'ring-white/80');
+        });
+    } else if (tipoFiltro === 'volumen') {
+        filtroVolumenActual = valor;
+        // Quita la clase 'activo' a todos los botones de volumen
+        document.querySelectorAll('#filtro-volumen-botones button').forEach(btn => {
+            btn.classList.remove('ring-4', 'ring-offset-2', 'ring-white/80');
+        });
+    }
+
+    // 2. Marcar el botón clickeado como activo
+    elementoBoton.classList.add('ring-4', 'ring-offset-2', 'ring-white/80');
+
+
+    // 3. Conseguir todas las tarjetas de perfume
     const tarjetasPerfumes = document.querySelectorAll('.product-card');
 
-    // 2. Iteramos sobre cada una
+    // 4. Iterar y aplicar lógica de filtrado doble
     tarjetasPerfumes.forEach(tarjeta => {
-        // Obtenemos el género de esta tarjeta
         const generoPerfume = tarjeta.dataset.genero;
+        const volumenPerfume = tarjeta.dataset.volumen;
 
-        // 3. Chequeamos la condición
-        if (filtroSeleccionado === 'todos' || generoPerfume === filtroSeleccionado) {
-            // Si coincide con el filtro o el filtro es 'todos', la mostramos
-            tarjeta.style.display = ''; // Usamos el display por defecto (debería ser el que usa Tailwind)
+        // Lógica de AND (deben cumplirse ambas)
+        const coincideGenero = (filtroGeneroActual === 'todos' || generoPerfume === filtroGeneroActual);
+        const coincideVolumen = (filtroVolumenActual === 'todos' || volumenPerfume === filtroVolumenActual);
+
+        if (coincideGenero && coincideVolumen) {
+            tarjeta.style.display = ''; // Mostrar
         } else {
-            // Si no coincide, la ocultamos
-            tarjeta.style.display = 'none';
+            tarjeta.style.display = 'none'; // Ocultar
         }
     });
 }
 
-// Opcional: Para que al cargar la página ya esté filtrado por "Todos"
+// Inicialización: Asegura que el botón "Todos" de género y volumen esté activo al cargar
 document.addEventListener('DOMContentLoaded', () => {
-    filtrarCatalogo('todos'); 
+    // Activar "Todos" de Género
+    const btnTodosGenero = document.querySelector('#filtro-genero-botones button');
+    if (btnTodosGenero) {
+        btnTodosGenero.classList.add('ring-4', 'ring-offset-2', 'ring-white/80');
+    }
+    // Activar "Todos" de Volumen
+    const btnTodosVolumen = document.querySelector('#filtro-volumen-botones button');
+    if (btnTodosVolumen) {
+        btnTodosVolumen.classList.add('ring-4', 'ring-offset-2', 'ring-white/80');
+    }
 });
-
-
-
-
-        
 
 
         // Función para ABRIR el modal
