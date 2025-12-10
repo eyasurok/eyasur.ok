@@ -1,0 +1,826 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EyASur.Ok - Set de Lujo</title>
+    
+    <link rel="icon" href="https://i.imgur.com/3t1uRyW.jpeg" type="image/png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'e-dark': '#0a0a0a',     
+                        'e-panel': '#121212',     
+                        'e-text': '#F5F5F5',     
+                        'e-gold': '#D4AF37',     
+                        'e-rosegold': '#E0BFB8',   
+                        'e-silver': '#C0C0C0',     
+                        'e-bronze': '#cd7f32',     
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'], 
+                        serif: ['Playfair Display', 'serif'], 
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* MODIFICACIÓN CLAVE: FONDO Y ANIMACIÓN PARA TODA LA PÁGINA */
+        
+        /* Definición de Keyframes (Tomada de tu Index) */
+        @keyframes zoom-in-out { from { transform: scale(1.0); } to { transform: scale(2.50); } }
+
+        .background-zoom-effect {
+            /* ⚠️ Usamos tu nueva imagen de fondo de Imgur */
+            background-image: url('https://i.imgur.com/PKoxrDe.jpeg'); 
+            
+            position: fixed; 
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-size: contain; 
+            background-position: center center; 
+            background-repeat: no-repeat;
+            
+            /* Aplicación de la animación */
+            transform: scale(1.0); 
+            animation: zoom-in-out 10s infinite alternate ease-in-out;
+            
+            /* Oscurece el fondo */
+            filter: brightness(0.70);
+            z-index: -1; 
+        }
+        
+        /* Estilos base */
+        .shiny-border-box {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            background: rgba(18, 18, 18, 0.5); 
+            backdrop-filter: blur(5px); 
+            transition: all 0.4s ease;
+        }
+        .shiny-border-box:hover { box-shadow: 0 0 40px rgba(212, 175, 55, 0.6); border-color: #D4AF37; }
+
+        .font-serif-fancy { font-family: 'Playfair Display', serif; letter-spacing: 1px; }
+        .font-sans-elegant { font-family: 'Montserrat', sans-serif; }
+        body { background-color: #0a0a0a; }
+
+        .product-card {
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            background-size: cover; background-position: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .product-card:hover {
+            transform: translateY(-5px); /* Menos movimiento para la grilla */
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); /* Sombra más sutil */
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+        
+        /* Estilo para la capa semi-transparente de la tarjeta */
+        .card-overlay {
+            background: rgba(10, 10, 10, 0.85); 
+            backdrop-filter: blur(2px);
+        }
+        
+        .luxury-gradient {
+            background: linear-gradient(to right, #D4AF37, #F8F1D2, #D4AF37);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-size: 200% auto; animation: shine 4s linear infinite;
+        }
+        @keyframes shine { to { background-position: 200% center; } }
+        
+        /* Estilos de tu index original (incluidos para compatibilidad) */
+        .mobile-menu { transition: max-height 0.4s ease-in-out, opacity 0.4s; max-height: 0; overflow: hidden; opacity: 0; }
+        .mobile-menu.open { max-height: 300px; opacity: 1; }
+        
+        input, textarea { background-color: rgba(255,255,255,0.05) !important; border: 1px solid rgba(212, 175, 55, 0.3) !important; color: #F5F5F5 !important; }
+        input:focus, textarea:focus { border-color: #D4AF37 !important; outline: none; box-shadow: 0 0 10px rgba(212, 175, 55, 0.3) !important; }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #121212; }
+        ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 4px; }
+        
+        /* Ajustes para #como-comprar */
+        #como-comprar {
+            background-image: url('https://images.news18.com/static-bengali/uploads/2025/06/Pilot-4-2025-06-e22e94df4355d95abaf8586780b9a702.jpg?impolicy=website&width=827&height=620');
+            background-size: contain; background-position: center; background-repeat: no-repeat;
+            min-height: 250px; position: relative; z-index: 1; 
+        }
+        #como-comprar .background-overlay-negro {
+            content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.1); z-index: -1; 
+        }
+        #como-comprar .relative.z-10 { z-index: 2; }
+        
+        @media (max-width: 768px) {
+            section { padding-top: 40px !important; padding-bottom: 40px !important; }
+            #inicio { padding-top: 60px !important; padding-bottom: 60px !important; }
+            #como-comprar { margin-top: 0 !important; }
+            #instagram-cta { padding-top: 30px !important; padding-bottom: 30px !important; }
+        }
+    </style>
+    
+</head>
+<body class="bg-e-dark font-sans text-e-text min-h-screen">
+
+    <div class="background-zoom-effect"></div>
+    
+    <div id="notification-container" class="fixed top-4 right-4 z-50 space-y-3"></div>
+
+    <header class="bg-e-dark/95 backdrop-blur-md text-e-text shadow-2xl sticky top-0 z-40 border-b border-e-gold/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center"> <img src="https://i.imgur.com/IP6VCT8.png" alt="Logo de EyASur.Ok" class="h-24 w-auto">
+                    </a>
+                </div>
+
+                <nav class="hidden md:flex items-center space-x-3">
+                    <a href="index.html" class="text-e-silver hover:text-e-gold transition duration-300 text-sm font-bold uppercase tracking-widest">Inicio</a>
+                    <a href="index.html#como-comprar" class="text-e-silver hover:text-e-gold transition duration-300 text-sm font-bold uppercase tracking-widest">Cómo Comprar</a>
+                    <!--<a href="fragancias.html" class="text-e-gold hover:text-e-gold transition duration-300 text-sm font-bold uppercase tracking-widest">Productos</a>-->
+                    <a href="index.html#featured-products" class="text-e-gold hover:text-e-gold transition duration-300 text-sm font-bold uppercase tracking-widest">Productos</a>
+                    <a href="index.html#about-us" class="text-e-silver hover:text-e-gold transition duration-300 text-sm font-bold uppercase tracking-widest">Nosotros</a>
+                    <a href="index.html#instagram-cta" class="text-e-silver hover:text-e-gold transition duration-300 text-sm font-bold uppercase tracking-widest">Novedades</a>
+                    <a href="index.html#contact" class="text-e-silver hover:text-e-gold transition duration-300 text-sm font-bold uppercase tracking-widest">Contacto</a>
+                    
+                    <a href="https://www.instagram.com/eyasur.ok" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-e-gold/50 rounded-full hover:bg-e-gold/10 transition duration-300 group">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-e-gold group-hover:text-pink-500 transition-colors"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        <span class="text-e-gold text-xs font-bold uppercase group-hover:text-e-text transition-colors">Visitanos en Instagram</span>
+                    </a>
+                </nav>
+
+                <div class="flex items-center space-x-5">
+                    <button onclick="openCart()" class="relative p-2 hover:scale-110 transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-e-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-red-600 text-white text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center">0</span>
+                    </button>
+                    
+                    <button onclick="toggleMobileMenu()" class="md:hidden text-e-gold">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                    </button>
+                </div>
+            </div>
+
+             <nav id="mobile-menu-links" class="mobile-menu md:hidden pb-6 bg-e-dark border-t border-gray-800">
+                <a href="index.html" class="mobile-link block px-3 py-3 text-e-silver hover:bg-gray-900 hover:text-e-gold text-sm uppercase tracking-widest">Inicio</a>
+                <a href="index.html#como-comprar" class="mobile-link block px-3 py-3 text-e-silver hover:bg-gray-900 hover:text-e-gold text-sm uppercase tracking-widest">Cómo Comprar</a>
+                <a href="index.html#fragancias.html" class="mobile-link block px-3 py-3 text-e-gold hover:bg-gray-900 text-sm uppercase tracking-widest">Productos</a>
+                <a href="index.html#about-us" class="mobile-link block px-3 py-3 text-e-silver hover:bg-gray-900 hover:text-e-gold text-sm uppercase tracking-widest">Nosotros</a>
+                <a href="index.html#instagram-cta" class="mobile-link block px-3 py-3 text-e-silver hover:bg-gray-900 hover:text-e-gold text-sm uppercase tracking-widest">Novedades</a>
+                <a href="index.html#contact" class="mobile-link block px-3 py-3 text-e-silver hover:bg-gray-900 hover:text-e-gold text-sm uppercase tracking-widest">Contacto</a>
+                <a href="https://www.instagram.com/eyasur.ok" target="_blank" class="mobile-link block px-3 py-3 text-e-gold hover:bg-gray-900 font-bold text-sm uppercase tracking-widest">
+                    Visitanos en Instagram
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-28 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-5xl font-serif-fancy text-center mb-16 text-e-gold drop-shadow-lg shiny-border-box p-4 bg-e-panel/70">
+                Mirá estos Boxes
+            </h1>
+            
+            <p class="text-center text-e-silver mb-10 max-w-3xl mx-auto shiny-border-box p-3 bg-e-panel/70">
+                "¡El regalo ideal! Para tus amigos, tu pareja o... ¿por qué no? Para darte ese gustito que te merecés. Elegí tu favorito entre nuestras 4 opciones exclusivas y todas vienen con una sorpresa 🤫. No olvides que también podés personalizar tu Set."
+            </p>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
+
+                
+
+
+                    
+<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02] flex items-center justify-center"
+     style="background-image: url('https://i.imgur.com/PKoxrDe.jpeg');"
+     onclick="openModal('https://i.imgur.com/PKoxrDe.jpeg')">
+
+    <div class="absolute inset-0 bg-black/60 transition-opacity group-hover:bg-black/70 pointer-events-none"></div>
+
+    <div class="relative w-full p-4 text-center z-10">
+        <h3 class="text-xs font-serif-fancy text-white mb-2 drop-shadow-md font-bold leading-tight">
+            Box Touch & Go: "Cuatro productos, mil sensaciones. El combo perfecto para que ese olorcito rico te acompañe las 24 horas."
+        </h3>
+
+        <div class="text-xs text-yellow-300 mb-3 font-bold drop-shadow-sm leading-tight space-y-1">
+            <p>• 1 Fragancia Frasco Vidrio Árabe 30ml</p>
+            <p>• 1 Body Splash 88ml</p>
+            <p>• 2 Fragancias 35ml</p>
+            <p>+ Regalito🎁</p>
+        </div>
+
+        <button onclick="event.stopPropagation(); addToCart(301, 'Box Touch & Go + Regalo', 30000)"
+                class="mb-1 inline-block bg-e-gold text-black px-5 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
+            $30.000 | Agregar
+        </button>
+    </div>
+</div>
+
+<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02] flex items-center justify-center"
+     style="background-image: url('https://i.imgur.com/GrsUVzq.jpeg');"
+     onclick="openModal('https://i.imgur.com/GrsUVzq.jpeg')">
+
+    <div class="absolute inset-0 bg-black/60 transition-opacity group-hover:bg-black/70 pointer-events-none"></div>
+
+    <div class="relative w-full p-4 text-center z-10">
+        <h3 class="text-xs font-serif-fancy text-white mb-2 drop-shadow-md font-bold leading-tight">
+            Box Vibe King: "Tu combo infalible: Vaper para relax, splash de tu fragancia favorita ¡Listo para salir!
+        </h3>
+
+        <div class="text-xs text-yellow-300 mb-3 font-bold drop-shadow-sm leading-tight space-y-1">
+            <p>• 1 Vaper Premium 40k Puff</p>
+            <p>• 1 Body Splash 88ml</p>
+            <p>• 1 Fragancia 35ml</p>
+            <p>+ Regalito🎁</p>
+        </div>
+
+        <button onclick="event.stopPropagation(); addToCart(302, 'Box Vibe King + Regalo', 50000)"
+                class="mb-1 inline-block bg-e-gold text-black px-5 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
+            $50.000 | Agregar
+        </button>
+    </div>
+</div>
+
+<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02] flex items-center justify-center"
+     style="background-image: url('https://i.imgur.com/q7erR5c.jpeg');"
+     onclick="openModal('https://i.imgur.com/q7erR5c.jpeg')">
+
+    <div class="absolute inset-0 bg-black/60 transition-opacity group-hover:bg-black/70 pointer-events-none"></div>
+
+    <div class="relative w-full p-4 text-center z-10">
+        <h3 class="text-xs font-serif-fancy text-white mb-2 drop-shadow-md font-bold leading-tight">
+            Box Glow & Shine: "¡A brillar, mi amor! Mucho glitter, piel suave y aromas irresistibles. Llevate el set más luminoso."
+        </h3>
+
+        <div class="text-xs text-yellow-300 mb-3 font-bold drop-shadow-sm leading-tight space-y-1">
+            <p>• 1 Crema Corporal Yara 500ml</p>
+            <p>• 1 Body Mist Yara Glitter</p>
+            <p>• 1 Body Splash 88ml + 1 Fragancia 35ml</p>
+            <p>+ Regalito🎁</p>
+        </div>
+
+        <button onclick="event.stopPropagation(); addToCart(303, 'Box Glow & Shine + Regalo', 50000)"
+                class="mb-1 inline-block bg-e-gold text-black px-5 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
+            $50.000 | Agregar
+        </button>
+    </div>
+</div>
+
+<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02] flex items-center justify-center"
+     style="background-image: url('https://i.imgur.com/V74Wkmy.jpeg');"
+     onclick="openModal('https://i.imgur.com/V74Wkmy.jpeg')">
+
+    <div class="absolute inset-0 bg-black/60 transition-opacity group-hover:bg-black/70 pointer-events-none"></div>
+
+    <div class="relative w-full p-4 text-center z-10">
+        <h3 class="text-xs font-serif-fancy text-white mb-2 drop-shadow-md font-bold leading-tight">
+            Box Supreme: ¿No te decidís? ¡Llevate todo! "Lujo máximo. Extracto puro, crema y Mist exclusivo."
+        </h3>
+
+        <div class="text-xs text-yellow-300 mb-3 font-bold drop-shadow-sm leading-tight space-y-1">
+            <p>• 1 Extracto 60ml + 1 Crema 500ml</p>
+            <p>• 1 Mist Yara Tous + 2 Fragancias 35ml</p>
+            <p>+ Regalito🎁</p>
+        </div>
+
+        <button onclick="event.stopPropagation(); addToCart(304, 'Box Supreme Luxury + Regalo', 70000)"
+                class="mb-1 inline-block bg-e-gold text-black px-5 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
+            $70.000 | Agregar
+        </button>
+    </div>
+</div>
+
+                    
+
+
+<!-- EJEMPLOS DE PRODUCTOS EN STOCK ----------------------------------------------------------------------------
+                
+ <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+     style="background-image: url('URL_DEL_PRODUCTO');"
+     onclick="openModal('URL_DEL_PRODUCTO')">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">COMPLETAR CON NOMBRE DE FRAGANCIA/VAPER/BOX</h3>
+         <button onclick="event.stopPropagation(); addToCart(415, 'Ameerat Al Arab 35ml', 6000)"
+                class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
+                    $6000 | Agregar
+         </button>     
+    </div>
+</div>
+                
+
+                
+<!--EJEMPLOS DE PRODUCTOS SIN STOCK ----------------------------------------------------------------------------
+                
+<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+     style="background-image: url('URL_DEL_PRODUCTO');"
+     onclick="openModal('URL_DEL_PRODUCTO')">
+<div class="absolute inset-0 z-20 flex items-center justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">COMPLETAR CON NOMBRE DE FRAGANCIA/VAPER/BOX</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $PRECIO SIN PUNTO | Agotado
+        </button>                 
+    </div>
+</div>
+
+
+----------------------------------------------------------------------------------------------------------------                
+-->
+
+
+
+
+
+
+
+
+                    
+                    
+                
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-black text-gray-500 py-10 text-center border-t border-gray-900">
+        <p class="text-sm">&copy; 2025-2026 EyASur.Ok. Todos los derechos reservados.</p>
+        <p class="text-xs mt-2 text-e-gold/50">Diseño Gold por EDM</p>
+        <p class="text-xs mt-2 text-e-gold/50">Este sitio fué creado con Amor ❤️</p>
+    </footer>
+
+    <div id="cart-modal" class="fixed inset-0 bg-black/90 z-50 hidden justify-center items-center p-4 backdrop-blur-sm">
+        <div class="bg-e-panel border border-e-gold/30 w-full max-w-lg rounded-sm shadow-2xl">
+            <div class="p-6">
+                <div class="flex justify-between items-center border-b border-gray-700 pb-4 mb-4">
+                    <h3 class="text-2xl font-serif-fancy text-e-gold">Tu Selección</h3>
+                    <button onclick="closeCart()" class="text-gray-400 hover:text-white text-3xl">&times;</button>
+                </div>
+                
+                <div id="cart-items-list" class="max-h-64 overflow-y-auto space-y-4 mb-6 pr-2"></div>
+                
+                <p id="empty-cart-message" class="text-center text-gray-500 py-4">El carrito está vacío.</p>
+
+                <div class="pt-4 border-t border-gray-700">
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-lg text-gray-300">Total:</span>
+                        <span id="cart-total" class="text-2xl font-bold text-e-gold">$0.00</span>
+                    </div>
+                    <button id="btn-init-checkout" onclick="openCheckout()" disabled class="w-full bg-e-gold text-black font-bold py-3 uppercase tracking-widest hover:bg-white transition disabled:opacity-50 disabled:cursor-not-allowed">
+                        Iniciar Compra
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="checkout-modal" class="fixed inset-0 bg-black/95 z-[60] hidden justify-center items-center p-4 backdrop-blur-md">
+        <div class="bg-e-panel border border-e-gold/50 w-full max-w-md rounded-sm shadow-2xl animate-fade-in">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-serif-fancy text-white">Finalizar Pedido</h3>
+                    <button onclick="closeCheckout()" class="text-gray-400 hover:text-white text-2xl">&times;</button>
+                </div>
+
+                <div class="mb-8 text-center bg-black/40 p-4 rounded border border-e-gold/20">
+                    <p class="text-gray-400 text-xs uppercase tracking-widest">Total a Pagar</p>
+                    <p id="checkout-total-display" class="text-3xl font-serif-fancy text-e-gold mt-1">$0.00</p>
+                </div>
+
+                <form id="order-form" action="https://formsubmit.co/eyasur.ok@gmail.com" method="POST" target="hidden-iframe" onsubmit="return handleOrderSubmit()">
+
+                    <input type="hidden" name="_replytoname" value="EyASur.Ok - Tienda Online">
+                    <input type="hidden" name="_subject" value="Nuevo Pedido - EyASur.Ok">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_default" value="Realizaste un nuevo pedido en https://eyasurok.github.io/">
+
+                    <input type="hidden" name="Numero_Orden" id="hidden-order-id">
+                    <input type="hidden" name="Detalle_Pedido" id="hidden-order-details">
+                    <input type="hidden" name="Monto_Total" id="hidden-order-total">
+                    <input type="hidden" name="_cc" id="hidden-customer-cc">
+                    <input type="hidden" name="Importante" value="¡Gracias por tu pedido! Recibimos tu solicitud. Nos contactaremos pronto para coordinar. EyASur.Ok">
+                        
+                    <div class="space-y-4">
+                        <div>
+                            <label class="text-xs text-e-gold uppercase">Nombre Completo</label>
+                            <input type="text" name="Nombre" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
+                        </div>
+                        <div class="relative"> <label class="text-xs text-e-gold uppercase" for="emailInput">Email</label>   
+                            <input type="email" id="emailInput" name="Email" required 
+                             class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold pr-10">                                
+                            <span id="checkIcon"                                
+                             class="absolute right-3 transform -translate-y-1/2 text-green-500 text-lg hidden" style="top: 70%;"> ✓
+                            </span>
+                        </div>                     
+                        <div>
+                            <label class="text-xs text-e-gold uppercase">Whatsapp / Teléfono</label>
+                            <input type="text" name="Telefono" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
+                        </div>
+                        <div>
+                            <label class="text-xs text-e-gold uppercase">Observaciones</label>
+                            <input type="text" name="Observaciones" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
+                        </div>
+                        <button type="submit" class="w-full mt-4 bg-e-gold text-black font-bold py-3 uppercase hover:bg-white transition shadow-[0_0_15px_rgba(212,175,55,0.4)]">
+                            Confirmar y Enviar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="final-modal" class="fixed inset-0 bg-black/95 z-[70] hidden justify-center items-center p-4">
+        <div class="bg-e-panel border-t-4 border-e-gold w-full max-w-md p-8 text-center shadow-2xl rounded-sm">
+            <div class="mb-4 text-e-gold flex justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <h3 class="text-3xl font-serif-fancy text-white mb-2">¡Pedido Enviado!</h3>
+            <p class="text-gray-400 mb-8">Ya recibimos tu pedido. En breve te enviaremos un correo de confirmación con tu número de orden
+                        para finalizar los detalles de pago y plazos de entrega de tus productos.</p>
+            
+            <div class="space-y-3">
+                <button onclick="finishProcess('shop')" class="w-full py-3 bg-transparent border border-gray-600 text-gray-300 hover:text-white hover:border-white transition">
+                    Continuar en el Sitio
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <iframe name="hidden-iframe" style="display:none;"></iframe>
+
+    <script>
+        // Variables
+        let cart = []; 
+        let currentOrderNumber = ''; 
+        const INSTAGRAM_URL = "https://www.instagram.com/eyasur.ok";
+        const STORAGE_KEY = 'eyasur_cart'; 
+
+        // --- SISTEMA DE ORDEN (Formato #HHMM-DDMM) ---
+        function generateTimeBasedOrderNumber() {
+            const now = new Date();
+            let hours = now.getHours();
+            hours = hours % 12; 
+            hours = hours ? hours : 12;
+            
+            const HH = String(hours).padStart(2, '0');
+            const MM_minutes = String(now.getMinutes()).padStart(2, '0');
+            const DD = String(now.getDate()).padStart(2, '0');
+            const MM_month = String(now.getMonth() + 1).padStart(2, '0'); 
+
+            return `#${HH}${MM_minutes}-${DD}${MM_month}`;
+        }
+        
+        // --- PERSISTENCIA: CARGAR CARRITO AL INICIO ---
+        function loadCart() {
+            const storedCart = localStorage.getItem(STORAGE_KEY);
+            if (storedCart) {
+                try {
+                    cart = JSON.parse(storedCart);
+                } catch (e) {
+                    console.error("Error al cargar el carrito de localStorage:", e);
+                    cart = [];
+                }
+            }
+        }
+        
+        // --- MENÚ MÓVIL AUTOMÁTICO ---
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu-links').classList.remove('open');
+            });
+        });
+
+        // --- CARRITO ---
+        window.addToCart = function(id, name, price) {
+            const existingItem = cart.find(item => item.id === id);
+            if (existingItem) {
+                existingItem.qty++;
+            } else {
+                cart.push({ id: id, name: name, price: price, qty: 1 });
+            }
+            renderCart();
+            showNotification(`Agregaste: ${name}`, 'success');
+        };
+
+        window.updateQty = function(index, change) {
+            if (cart[index].qty + change <= 0) {
+                cart.splice(index, 1);
+            } else {
+                cart[index].qty += change;
+            }
+            renderCart();
+        };
+
+        window.removeFromCart = function(index) {
+            cart.splice(index, 1);
+            renderCart();
+        };
+
+        function renderCart() {
+            const list = document.getElementById('cart-items-list');
+            const emptyMsg = document.getElementById('empty-cart-message');
+            const totalEl = document.getElementById('cart-total');
+            const countEl = document.getElementById('cart-count');
+            const checkoutBtn = document.getElementById('btn-init-checkout');
+
+            let total = 0;
+            let count = 0;
+            
+            // Si el elemento 'list' no existe (por ejemplo, si el modal fue eliminado del HTML), la función se detiene aquí.
+            if (!list) {
+                console.error("Error Fatal: No se encuentra el elemento #cart-items-list. El modal de carrito está incompleto.");
+                // Intentamos devolver el contador a 0 si es posible.
+                if(countEl) countEl.innerText = 0;
+                return; 
+            }
+
+            list.innerHTML = '';
+
+            if (cart.length === 0) {
+                emptyMsg.style.display = 'block';
+                checkoutBtn.disabled = true;
+                checkoutBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            } else {
+                emptyMsg.style.display = 'none';
+                checkoutBtn.disabled = false;
+                checkoutBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+
+                cart.forEach((item, index) => {
+                    total += item.price * item.qty;
+                    count += item.qty;
+
+                    const div = document.createElement('div');
+                    div.className = 'flex justify-between items-center bg-black/40 p-3 rounded border border-gray-700';
+                    div.innerHTML = `
+                        <div>
+                            <p class="font-bold text-white text-sm">${item.name}</p>
+                            <p class="text-xs text-e-gold">$${item.price.toLocaleString('es-AR')} c/u</p>
+                        </div>
+                        <div class="flex items-center gap-3 bg-e-dark border border-gray-600 rounded px-2 py-1">
+                            <button onclick="updateQty(${index}, -1)" class="text-gray-400 hover:text-white font-bold text-lg px-1">-</button>
+                            <span class="text-white font-bold text-sm w-4 text-center">${item.qty}</span>
+                            <button onclick="updateQty(${index}, 1)" class="text-e-gold hover:text-white font-bold text-lg px-1">+</button>
+                        </div>
+                    `;
+                    list.appendChild(div);
+                });
+            }
+
+            const formattedTotal = `$${total.toLocaleString('es-AR')}`;
+            totalEl.innerText = formattedTotal;
+            countEl.innerText = count;
+            
+            if (count === 0) {
+                countEl.style.display = 'none';
+            } else {
+                countEl.style.display = 'flex'; 
+            }
+
+            document.getElementById('checkout-total-display').innerText = formattedTotal;
+            document.getElementById('hidden-order-total').value = formattedTotal;
+            
+            if(count === 0) {
+                countEl.style.display = 'none';
+            }
+            
+            // --- PERSISTENCIA: GUARDAR CARRITO AL FINALIZAR EL RENDERIZADO ---
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+        }
+
+        // --- MODALES Y CHECKOUT ---
+        window.openCart = function() { document.getElementById('cart-modal').classList.replace('hidden', 'flex'); };
+        window.closeCart = function() { document.getElementById('cart-modal').classList.replace('flex', 'hidden'); };
+
+        window.openCheckout = function() {
+            closeCart();
+            currentOrderNumber = generateTimeBasedOrderNumber();
+            document.getElementById('hidden-order-id').value = currentOrderNumber;
+            const detalles = cart.map(i => `${i.name} (Cant: ${i.qty}) - $${i.price * i.qty}`).join(' | ');
+            document.getElementById('hidden-order-details').value = detalles;
+            document.getElementById('checkout-modal').classList.replace('hidden', 'flex');
+        };
+        window.closeCheckout = function() { document.getElementById('checkout-modal').classList.replace('flex', 'hidden'); };
+        window.closeFinalModal = function() { document.getElementById('final-modal').classList.replace('flex', 'hidden'); };
+
+        // --- MANEJO DE FORMULARIOS Y NOTIFICACIONES ---
+        window.handleContactSubmit = function() {
+            setTimeout(() => {
+                document.getElementById('contact-form').reset();
+                showNotification('Mensaje Enviado. En breve nos pondremos en contacto para responder tu consulta ☺️', 'success');
+            }, 1500);
+            return true;
+        };
+
+        window.handleOrderSubmit = function() {
+            const telefonoInput = document.querySelector('[name="Telefono"]');
+            const telefonoValor = telefonoInput.value.replace(/\s/g, ''); 
+
+            if (telefonoValor.length < 10) {
+                alert("¡Ingrese un teléfono válido e intente nuevamente por favor!");
+                telefonoInput.focus(); 
+                return false; 
+            }
+            const customerEmail = document.querySelector('input[name="Email"]').value;
+            document.getElementById('hidden-customer-cc').value = customerEmail; 
+
+            setTimeout(() => {
+                closeCheckout();
+                document.getElementById('final-modal').classList.replace('hidden', 'flex'); 
+                
+                cart = [];
+                renderCart();
+                document.getElementById('order-form').reset();
+            }, 1000); 
+            
+            return true;
+        };
+
+        window.finishProcess = function(action) {
+            closeFinalModal();
+            
+            const orderMsg = `Tu pedido ya fué enviado ☺️. En breve recibirás un correo de confirmación. Tu número de orden es: ${currentOrderNumber}`;
+            
+            localStorage.setItem('eyasur_pending_order_notification', JSON.stringify({
+                msg: orderMsg,
+                type: 'order'
+            }));
+            
+            showNotification(orderMsg, 'order'); 
+            
+            if (action === 'instagram') {
+                setTimeout(() => {
+                    window.open(INSTAGRAM_URL, '_blank');
+                }, 1500);
+            }
+        };
+
+        window.toggleMobileMenu = function() {
+            document.getElementById('mobile-menu-links').classList.toggle('open');
+        };
+
+        function showNotification(msg, type) {
+            const container = document.getElementById('notification-container');
+            const div = document.createElement('div');
+            
+            let borderClass = type === 'success' ? 'border-green-500' : (type === 'order' ? 'border-blue-500' : 'border-e-gold');
+            let icon = type === 'success' ? '✨' : (type === 'order' ? '🧾' : '🔔');
+
+            div.className = `bg-e-panel border-l-4 ${borderClass} text-white px-4 py-4 shadow-2xl rounded-sm animate-bounce flex items-center justify-between gap-4 min-w-[300px] pointer-events-auto`;
+            div.style.animation = "fadeIn 0.5s";
+            
+            div.innerHTML = `
+                <div class="flex items-center gap-2">
+                    <span class="text-xl">${icon}</span>
+                    <p class="font-bold text-sm">${msg}</p>
+                </div>
+                <button class="text-gray-400 hover:text-white font-bold px-2">✕</button>
+            `;
+            
+            container.appendChild(div);
+            
+            const closeButton = div.querySelector('button');
+
+            if (type !== 'order') {
+                closeButton.onclick = function() { div.remove(); };
+                setTimeout(() => {
+                    if(div.parentNode) div.remove();
+                }, 5000);
+            } else {
+                closeButton.onclick = function(e) {
+                    e.preventDefault(); 
+                    div.remove();
+                    localStorage.removeItem('eyasur_pending_order_notification');
+                };
+            }
+        }
+        
+        function checkPersistentNotification() {
+            const stored = localStorage.getItem('eyasur_pending_order_notification');
+            if (stored) {
+                const data = JSON.parse(stored);
+                showNotification(data.msg, data.type); 
+            }
+        }
+
+        // --- INICIALIZACIÓN: CARGAR Y RENDERIZAR EN EL ORDEN CORRECTO ---
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCart();
+            renderCart();
+            checkPersistentNotification();
+        });
+
+
+
+// --- FUNCIÓN PARA QUE SE TILDE SI EL CORREO ESTÁ BIEN ESCRITO ---
+document.addEventListener('DOMContentLoaded', (event) => {
+        const emailInput = document.getElementById('emailInput');
+        const checkIcon = document.getElementById('checkIcon');
+
+        // Escuchamos cada vez que se presiona y suelta una tecla
+        emailInput.addEventListener('keyup', function() {
+            
+            // 1. Verificamos si el campo cumple con type="email"
+            if (this.checkValidity()) {
+                
+                // Si es VÁLIDO (tiene @ y punto) y NO está vacío
+                if (this.value.length > 0) {
+                    checkIcon.classList.remove('hidden'); // Muestra el tilde
+                } else {
+                    checkIcon.classList.add('hidden');
+                }
+                
+            } else {
+                // Si es INVÁLIDO, lo ocultamos
+                checkIcon.classList.add('hidden');
+            }
+        });
+    });
+
+
+        
+
+        
+
+        
+
+        // Función para ABRIR el modal
+function openModal(imageUrl) {
+    const modal = document.getElementById('imageModal');
+    const img = document.getElementById('modalImg');
+    
+    // Le pasamos la url de la foto al modal
+    img.src = imageUrl;
+    
+    // Le sacamos la clase 'hidden' para que aparezca
+    modal.classList.remove('hidden');
+}
+
+// Función para CERRAR el modal
+function closeModal() {
+    const modal = document.getElementById('imageModal');
+    
+    // Le volvemos a poner 'hidden' para ocultarlo
+    modal.classList.add('hidden');
+    
+    // Limpiamos la imagen por las dudas
+    document.getElementById('modalImg').src = '';
+}
+
+// Cierra el modal si tocan la tecla ESC (Detalle de calidad)
+document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") {
+        closeModal();
+    }
+});
+
+
+
+
+
+
+        
+    </script>
+    
+<!--Etiqueta modal que hace abrir la imagen tipo pop-up-->
+    <div id="imageModal" 
+     class="fixed inset-0 bg-black/90 z-[9999] hidden flex items-center justify-center p-4 cursor-pointer backdrop-blur-sm"
+     onclick="closeModal()">
+    
+    <div class="relative max-w-5xl w-full h-full flex items-center justify-center">
+        <button class="absolute top-5 right-5 text-white text-4xl font-bold hover:text-yellow-400 transition">&times;</button>
+        
+        <img id="modalImg" src="" alt="Zoom Producto" 
+             class="max-h-[90vh] max-w-full rounded-md shadow-2xl object-contain ring-1 ring-white/20">
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>
