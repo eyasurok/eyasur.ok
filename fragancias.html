@@ -202,6 +202,7 @@
 <!--HTML PARA EL FILTRO-->
 
             <div id="filtro-genero-botones" class="flex justify-center space-x-4 p-4 mt-4">
+    </div>
     <button onclick="aplicarFiltros('genero', 'todos', this)" 
             class="filtro-btn px-4 py-2 rounded-lg font-bold transition duration-300 shadow-lg bg-gray-500 text-white hover:bg-gray-600">
         Todos
@@ -238,6 +239,10 @@
             class="filtro-btn-vol px-3 py-1 text-sm rounded-full font-bold transition duration-300 shadow-md bg-e-gold text-black hover:bg-yellow-600">
         50ml
     </button>
+        <button onclick="aplicarFiltros('volumen', '60ml', this)" 
+            class="filtro-btn-vol px-3 py-1 text-sm rounded-full font-bold transition duration-300 shadow-md bg-e-gold text-black hover:bg-yellow-600">
+        60ml
+    </button>
     <button onclick="aplicarFiltros('volumen', '88ml', this)" 
             class="filtro-btn-vol px-3 py-1 text-sm rounded-full font-bold transition duration-300 shadow-md bg-e-gold text-black hover:bg-yellow-600">
         88ml
@@ -255,7 +260,9 @@
 
             
 <!--LISTA DE PRODUCTOS-->
-
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+    </div>
+        
 <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
      data-genero="femenino" data-volumen="35ml"
      style="background-image: url('https://i.imgur.com/rutAfHx.jpeg');"
