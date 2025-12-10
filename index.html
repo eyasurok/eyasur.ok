@@ -267,19 +267,16 @@
                         </p>
                         <p class="text-base text-e-silver mb-2 font-sans-elegant">
                         Tenemos tres categorías:
-                        </p>
-    
+                        </p> 
                         <ul id="lista-categorias" class="text-base text-e-silver mb-4 font-sans-elegant list-disc space-y-1">
                         ✨ PERFUMES
                         <ul id="lista-categorias" class="text-base text-e-silver mb-4 font-sans-elegant list-disc space-y-1">
                         💨 VAPERS
                         <ul id="lista-categorias" class="text-base text-e-silver mb-4 font-sans-elegant list-disc space-y-1">
-                        💎 SET DE LUJO
-    
+                        💎 SET DE LUJO    
                         <p class="text-base text-e-silver mb-8 font-sans-elegant">
                         En cada sección encontrarás un enlace donde podrás ver todas las fotos y modelos disponibles para elegir lo que estás buscando o el que más va con vos.
                         </p>
-
                         <p class="text-lg text-e-gold mb-2 font-bold font-sans-elegant">
                         2. ➕ Añadir al Carrito (¡Clave!)
                         </p>
@@ -290,7 +287,6 @@
                         <p class="text-base text-e-gold mb-8 font-sans-elegant border border-e-gold/75 py-2 px-2 rounded-md bg-black/75">
                         ⚠️ IMPORTANTE: Al finalizar el proceso de compra, verás un cuadro de texto para completar. Es OBLIGATORIO que allí completes los datos que te solicitamos "Nombre, Correo y Celular".
                         </p>
-
                         <p class="text-lg text-e-gold mb-2 font-bold font-sans-elegant">
                         3. 💬 Finalización y Contacto
                         </p>
@@ -519,7 +515,6 @@
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_default" value="Realizaste un nuevo pedido en https://eyasurok.github.io/">
 
-                    <!--<input type="hidden" name="_autoreply_replyto" value="eyasur.ok@gmail.com">-->
                     
                     <input type="hidden" name="Numero_Orden" id="hidden-order-id">
                     <input type="hidden" name="Detalle_Pedido" id="hidden-order-details">
@@ -532,9 +527,12 @@
                             <label class="text-xs text-e-gold uppercase">Nombre Completo</label>
                             <input type="text" name="Nombre" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
                         </div>
-                        <div>
-                            <label class="text-xs text-e-gold uppercase">Email</label>                        
-                            <input type="email" name="Email" required class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold">
+                        <div class="relative"> <label class="text-xs text-e-gold uppercase" for="emailInput">Email</label>   
+                            <input type="email" id="emailInput" name="Email" required 
+                             class="w-full mt-1 px-3 py-2 bg-black border border-gray-700 text-white focus:border-e-gold pr-10">                                
+                            <span id="checkIcon"                                
+                             class="absolute right-3 transform -translate-y-1/2 text-green-500 text-lg hidden" style="top: 70%;"> ✓
+                            </span>
                         </div>
                         <div>
                             <label class="text-xs text-e-gold uppercase">Whatsapp / Teléfono</label>
