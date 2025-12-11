@@ -202,7 +202,6 @@
 <!--HTML PARA EL FILTRO-->
             
 <div id="filtro-genero-botones" class="flex flex-wrap justify-center space-x-4 p-4 mt-4">
-<!--<div id="filtro-genero-botones" class="flex justify-center space-x-4 p-4 mt-4">-->
     <span class="text-white font-bold self-center mr-2">Género:</span>
 </div>
             
@@ -234,40 +233,49 @@
     <span class="text-white font-bold self-center mr-2">Presentación:</span>
 </div>   
             
-<div id="filtro-volumen-botones" class="flex flex-wrap justify-center space-x-2 p-4 border-t border-gray-700 mt-4">
-  
-    <button onclick="aplicarFiltros('volumen', 'todos', this)" 
+<div id="filtro-volumen-botones" class="flex flex-wrap justify-center space-x-2 p-4 border-t border-gray-700 mt-4"> 
+        <button onclick="aplicarFiltros('volumen', 'todos', this)" 
             class="filtro-btn px-4 py-2 rounded-lg font-bold transition duration-300 shadow-lg bg-e-copper text-white hover:bg-yellow-600 text-xs">
-        Todos
-    </button>
-    <button onclick="aplicarFiltros('volumen', '30ml', this)" 
+            Todos
+        </button>
+</div> 
+            
+<div id="filtro-volumen-botones" class="flex flex-wrap justify-center space-x-2 p-4 border-t border-gray-700 mt-4">    
+        <button onclick="aplicarFiltros('volumen', '30ml', this)" 
             class="filtro-btn-vol px-3 py-1 text-xs rounded-full font-bold transition duration-300 shadow-md bg-e-gold text-black hover:bg-yellow-600">
-        30ml
-    </button>
-    <button onclick="aplicarFiltros('volumen', '35ml', this)" 
+            30ml
+        </button>
+        <button onclick="aplicarFiltros('volumen', '35ml', this)" 
             class="filtro-btn-vol px-3 py-1 text-xs rounded-full font-bold transition duration-300 shadow-md bg-e-gold text-black hover:bg-yellow-600">
-        35ml
-    </button>
-    <button onclick="aplicarFiltros('volumen', '50ml', this)" 
+            35ml
+        </button>
+        <button onclick="aplicarFiltros('volumen', '50ml', this)" 
             class="filtro-btn-vol px-3 py-1 text-xs rounded-full font-bold transition duration-300 shadow-md bg-e-gold text-black hover:bg-yellow-600">
-        50ml
-    </button>
+            50ml
+        </button>
+</div> 
+   
+<div id="filtro-volumen-botones" class="flex flex-wrap justify-center space-x-2 p-4 border-t border-gray-700 mt-4"> 
         <button onclick="aplicarFiltros('volumen', '60ml', this)" 
             class="filtro-btn-vol px-3 py-1 text-xs rounded-full font-bold transition duration-300 shadow-md bg-e-gold text-black hover:bg-yellow-600">
-        60ml
-    </button>
-    <button onclick="aplicarFiltros('volumen', '88ml', this)" 
+            60ml
+        </button>
+        <button onclick="aplicarFiltros('volumen', '88ml', this)" 
             class="filtro-btn-vol px-3 py-1 text-xs rounded-full font-bold transition duration-300 shadow-md bg-e-gold text-black hover:bg-yellow-600">
-        88ml
-    </button>
-    <button onclick="aplicarFiltros('volumen', '100ml', this)" 
+            88ml
+        </button>
+        <button onclick="aplicarFiltros('volumen', '100ml', this)" 
             class="filtro-btn-vol px-3 py-1 text-xs rounded-full font-bold transition duration-300 shadow-md bg-e-gold text-black hover:bg-yellow-600">
         100ml
     </button>
-    <button onclick="aplicarFiltros('volumen', '250ml', this)" 
+</div>
+
+
+<div id="filtro-volumen-botones" class="flex flex-wrap justify-center space-x-2 p-4 border-t border-gray-700 mt-4"> 
+        <button onclick="aplicarFiltros('volumen', '250ml', this)" 
             class="filtro-btn-vol px-3 py-1 text-xs rounded-full font-bold transition duration-300 shadow-md bg-e-gold text-black hover:bg-yellow-600">
-        250ml
-    </button>
+            250ml
+        </button>
 </div>
 
 
