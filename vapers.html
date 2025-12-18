@@ -147,7 +147,6 @@
                     <a href="index.html" class="text-e-silver hover:text-e-gold transition duration-300 text-sm font-bold uppercase tracking-widest">Inicio</a>
                     <a href="index.html#como-comprar" class="text-e-silver hover:text-e-gold transition duration-300 text-sm font-bold uppercase tracking-widest">Cómo Comprar</a>
                     <a href="index.html#featured-products" class="text-e-gold hover:text-e-gold transition duration-300 text-sm font-bold uppercase tracking-widest">Productos</a>
-                    <!--<a href="#featured-products" class="text-e-silver hover:text-e-gold transition duration-300 text-sm font-bold uppercase tracking-widest">Productos</a>-->
                     <a href="index.html#about-us" class="text-e-silver hover:text-e-gold transition duration-300 text-sm font-bold uppercase tracking-widest">Nosotros</a>
                     <a href="index.html#instagram-cta" class="text-e-silver hover:text-e-gold transition duration-300 text-sm font-bold uppercase tracking-widest">Novedades</a>
                     <a href="index.html#contact" class="text-e-silver hover:text-e-gold transition duration-300 text-sm font-bold uppercase tracking-widest">Contacto</a>
@@ -175,7 +174,6 @@
              <nav id="mobile-menu-links" class="mobile-menu md:hidden pb-6 bg-e-dark border-t border-gray-800">
                 <a href="index.html" class="mobile-link block px-3 py-3 text-e-silver hover:bg-gray-900 hover:text-e-gold text-sm uppercase tracking-widest">Inicio</a>
                 <a href="index.html#como-comprar" class="mobile-link block px-3 py-3 text-e-silver hover:bg-gray-900 hover:text-e-gold text-sm uppercase tracking-widest">Cómo Comprar</a>
-                <!--<a href="fragancias.html" class="mobile-link block px-3 py-3 text-e-gold hover:bg-gray-900 text-sm uppercase tracking-widest">Productos</a>-->
                 <a href="index.html#featured-products" class="mobile-link block px-3 py-3 text-e-silver hover:bg-gray-900 hover:text-e-gold text-sm uppercase tracking-widest">Productos</a>
                 <a href="index.html#about-us" class="mobile-link block px-3 py-3 text-e-silver hover:bg-gray-900 hover:text-e-gold text-sm uppercase tracking-widest">Nosotros</a>
                 <a href="index.html#instagram-cta" class="mobile-link block px-3 py-3 text-e-silver hover:bg-gray-900 hover:text-e-gold text-sm uppercase tracking-widest">Novedades</a>
@@ -198,323 +196,942 @@
                 Hacé clic en "Agregar al carrito" para iniciar tu pedido.
             </p>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                
-                <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+
+   <!--HTML PARA EL FILTRO-->
+
+            <div class="mb-6 ">
+    <label for="brandFilter" class="block text-lg font-semibold mb-2 text-white">Filtrar por Marca:</label>
+                    <!--<div class="mb-6 w-full flex justify-center"> <div class="w-full md:w-1/3"> <label for="brandFilter" class="block text-lg font-semibold mb-2 text-white">Filtrar por Marca:</label>-->
+    
+    <select id="brandFilter" onchange="filterProductsByBrand()" 
+           class="w-full md:w-1/3 p-3 border border-gray-600 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-e-gold">
+        <option value="ALL">Mostrar Todas</option>
+        <option value="ElfBar">ElfBar</option>
+        <option value="Lost Mary">Lost Mary</option>
+        <option value="Ignite">Ignite</option>
+    </select>
+</div>
+
+<div id="productsContainer" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+
+<!--NUEVO-->
+            
+
+            <!--<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">-->
+
+    
+  <!--COMIENZA LISTA DE ICE KING-->
+
+                <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
                              style="background-image: url('https://i.imgur.com/7HT3CF6.jpeg');"
-                                 onclick="openModal('https://i.imgur.com/7HT3CF6.jpeg')">
-                            <!--<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>-->
+                                 onclick="openModal('https://i.imgur.com/7HT3CF6.jpeg')"
+                                    data-marca="ElfBar">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
                                 <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar IceKing Baja Splash 40k</h3>
-                            <button onclick="event.stopPropagation(); addToCart(201, 'ElfBar IceKing Baja Splash 40k', 40000)"
+                            <button onclick="event.stopPropagation(); addToCart(501, 'ElfBar IceKing Baja Splash 40k', 40000)"
                                   class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
                                     $40.000 | Agregar
                             </button>
                             </div>
-                </div>
-
+                </div>-->
                 <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                style="background-image: url('https://i.imgur.com/7HT3CF6.jpeg');"
+                onclick="openModal('https://i.imgur.com/7HT3CF6.jpeg')"
+                data-marca="ElfBar">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar IceKing Baja Splash 40k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>
+
+    <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                             style="background-image: url('https://i.imgur.com/oPXcM9u.jpeg');"
+                                 onclick="openModal('https://i.imgur.com/oPXcM9u.jpeg')"
+                                 data-marca="ElfBar">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
+                                <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar Ice King StrawBerry Watermelon 40k</h3>
+                            <button onclick="event.stopPropagation(); addToCart(527, 'ElfBar Ice King StrawBerry Watermelon 40k', 40000)"
+                                  class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
+                                    $40.000 | Agregar
+                            </button>
+                            </div>
+                </div>-->
+                <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+     style="background-image: url('https://i.imgur.com/oPXcM9u.jpeg');"
+     onclick="openModal('https://i.imgur.com/oPXcM9u.jpeg')"
+     data-marca="ElfBar">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar Ice King StrawBerry Watermelon 40k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>
+
+
+                <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
                              style="background-image: url('https://i.imgur.com/dTZLk8f.jpeg');"
-                                 onclick="openModal('https://i.imgur.com/dTZLk8f.jpeg')">
-                             <!--<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>-->
+                                 onclick="openModal('https://i.imgur.com/dTZLk8f.jpeg')"
+                                 data-marca="ElfBar">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
                                 <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar IceKing Dragon Strawnana 40k</h3>
-                            <button onclick="event.stopPropagation(); addToCart(202, 'ElfBar IceKing Dragon Strawnana 40k', 40000)"
+                            <button onclick="event.stopPropagation(); addToCart(502, 'ElfBar IceKing Dragon Strawnana 40k', 40000)"
                                   class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
                                     $40.000 | Agregar
                             </button>
                             </div>
-                </div>
+                </div>-->
+                <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                style="background-image: url('https://i.imgur.com/dTZLk8f.jpeg');"
+                onclick="openModal('https://i.imgur.com/dTZLk8f.jpeg')"
+                data-marca="ElfBar">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar IceKing Dragon Strawnana 40k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>
 
-                    <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
                              style="background-image: url('https://i.imgur.com/ILKZ7Cr.jpeg');"
-                                 onclick="openModal('https://i.imgur.com/ILKZ7Cr.jpeg')">
-                            <!--<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>-->
+                                 onclick="openModal('https://i.imgur.com/ILKZ7Cr.jpeg')"
+                                 data-marca="ElfBar">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
                                 <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar IceKing Peach+ 40k</h3>
-                            <button onclick="event.stopPropagation(); addToCart(203, 'ElfBar IceKing Peach+ 40k', 40000)"
+                            <button onclick="event.stopPropagation(); addToCart(503, 'ElfBar IceKing Peach+ 40k', 40000)"
                                   class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
                                     $40.000 | Agregar
                             </button>
                             </div>
                 </div>
+                <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                style="background-image: url('https://i.imgur.com/ILKZ7Cr.jpeg');"
+                onclick="openModal('https://i.imgur.com/ILKZ7Cr.jpeg')"
+                data-marca="ElfBar">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar IceKing Peach+ 40k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>-->
                 
 
-                    <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
                              style="background-image: url('https://i.imgur.com/hcm8Ql5.jpeg');"
-                                 onclick="openModal('https://i.imgur.com/hcm8Ql5.jpeg')">
-                                <!--<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>-->
+                                 onclick="openModal('https://i.imgur.com/hcm8Ql5.jpeg')"
+                                 data-marca="ElfBar">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
                                 <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar IceKing Scary Berry 40k</h3>
-                            <button onclick="event.stopPropagation(); addToCart(204, 'ElfBar IceKing Scary Berry 40k', 40000)"
+                            <button onclick="event.stopPropagation(); addToCart(504, 'ElfBar IceKing Scary Berry 40k', 40000)"
                                   class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
                                     $40.000 | Agregar
                             </button>
                             </div>
-                </div>
+                </div>-->
+                <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                style="background-image: url('https://i.imgur.com/hcm8Ql5.jpeg');"
+                onclick="openModal('https://i.imgur.com/hcm8Ql5.jpeg')"
+                data-marca="ElfBar">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar IceKing Scary Berry 40k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>
                 
-                    <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
                              style="background-image: url('https://i.imgur.com/eD0jBwl.jpeg');"
-                                 onclick="openModal('https://i.imgur.com/eD0jBwl.jpeg')">
-                                <!--<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>-->
+                                 onclick="openModal('https://i.imgur.com/eD0jBwl.jpeg')"
+                                 data-marca="ElfBar">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
                                 <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar IceKing Sour Apple Ice 40k</h3>
-                            <button onclick="event.stopPropagation(); addToCart(205, 'ElfBar IceKing Sour Apple Ice 40k', 40000)"
+                            <button onclick="event.stopPropagation(); addToCart(505, 'ElfBar IceKing Sour Apple Ice 40k', 40000)"
                                   class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
                                     $40.000 | Agregar
                             </button>
                             </div>
-                </div>
+                </div>-->
+                <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                style="background-image: url('https://i.imgur.com/eD0jBwl.jpeg');"
+                onclick="openModal('https://i.imgur.com/eD0jBwl.jpeg')"
+                data-marca="ElfBar">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar IceKing Sour Apple Ice 40k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>
                 
-                    <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
                              style="background-image: url('https://i.imgur.com/9IDMony.jpeg');"
-                                 onclick="openModal('https://i.imgur.com/9IDMony.jpeg')">
-                                <!--<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>-->
+                                 onclick="openModal('https://i.imgur.com/9IDMony.jpeg')"
+                                 data-marca="ElfBar">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
                                 <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar IceKing Sour Lush Gummy 40k</h3>
-                            <button onclick="event.stopPropagation(); addToCart(206, 'ElfBar IceKing Sour Lush Gummy 40k', 40000)"
+                            <button onclick="event.stopPropagation(); addToCart(506, 'ElfBar IceKing Sour Lush Gummy 40k', 40000)"
                                   class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
                                     $40.000 | Agregar
                             </button>
                             </div>
-                </div>
+                </div>-->
+                <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                style="background-image: url('https://i.imgur.com/9IDMony.jpeg');"
+                onclick="openModal('https://i.imgur.com/9IDMony.jpeg')"
+                data-marca="ElfBar">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar IceKing Sour Lush Gummy 40k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>
 
-                    <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
                              style="background-image: url('https://i.imgur.com/sKGQaEA.jpeg');"
-                                 onclick="openModal('https://i.imgur.com/sKGQaEA.jpeg')">
-                                <!--<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>-->
+                                 onclick="openModal('https://i.imgur.com/sKGQaEA.jpeg')"
+                                 data-marca="ElfBar">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
                                 <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar IceKing Sour Strawberry DragonFruit 40k</h3>
-                            <button onclick="event.stopPropagation(); addToCart(207, 'ElfBar IceKing Sour Strawberry DragonFruit 40k', 40000)"
+                            <button onclick="event.stopPropagation(); addToCart(507, 'ElfBar IceKing Sour Strawberry DragonFruit 40k', 40000)"
                                   class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
                                     $40.000 | Agregar
                             </button>
                             </div>
-                </div>
+                </div>-->
+                <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                style="background-image: url('https://i.imgur.com/sKGQaEA.jpeg');"
+                onclick="openModal('https://i.imgur.com/sKGQaEA.jpeg')"
+                data-marca="ElfBar">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar IceKing Sour Strawberry DragonFruit 40k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>
                 
 
-                    <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+               <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
                              style="background-image: url('https://i.imgur.com/lNKdcRG.jpeg');"
-                                 onclick="openModal('https://i.imgur.com/lNKdcRG.jpeg')">
-                                <!--<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>-->
+                                 onclick="openModal('https://i.imgur.com/lNKdcRG.jpeg')"
+                                 data-marca="ElfBar">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
                                 <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar IceKing Strawberry Ice 40k</h3>
-                            <button onclick="event.stopPropagation(); addToCart(208, 'ElfBar IceKing Strawberry Ice 40k', 40000)"
+                            <button onclick="event.stopPropagation(); addToCart(508, 'ElfBar IceKing Strawberry Ice 40k', 40000)"
                                   class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
                                     $40.000 | Agregar
                             </button>
                             </div>
-                </div>
-                
-                      <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                </div>-->
+                <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                style="background-image: url('https://i.imgur.com/lNKdcRG.jpeg');"
+                onclick="openModal('https://i.imgur.com/lNKdcRG.jpeg')"
+                data-marca="ElfBar">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar IceKing Strawberry Ice 40k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>
+
+    <!--COMIENZA LISTA DE NIC KING-->
+    
+                 <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
                              style="background-image: url('https://i.imgur.com/l1pWYfs.jpeg');"
-                                 onclick="openModal('https://i.imgur.com/l1pWYfs.jpeg')">
-                                <!--<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>-->
+                                 onclick="openModal('https://i.imgur.com/l1pWYfs.jpeg')"
+                                 data-marca="ElfBar">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
-                                <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar NicKing Grape Cranberry</h3>
-                            <button onclick="event.stopPropagation(); addToCart(209, 'ElfBar NicKing Grape Cranberry', 40000)"
+                                <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar NicKing Grape CranBerry</h3>
+                            <button onclick="event.stopPropagation(); addToCart(509, 'ElfBar NicKing Grape CranBerry', 40000)"
                                   class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
                                     $40.000 | Agregar
                             </button>
                             </div>
-                </div>
+                </div>-->
+               <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                style="background-image: url('https://i.imgur.com/l1pWYfs.jpeg');"
+                onclick="openModal('https://i.imgur.com/l1pWYfs.jpeg')"
+                data-marca="ElfBar">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar NicKing Grape CranBerry</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>
 
-                      <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                  <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
                              style="background-image: url('https://i.imgur.com/uHcMdpX.jpeg');"
-                                 onclick="openModal('https://i.imgur.com/uHcMdpX.jpeg')">
-                                <!--<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>-->
+                                 onclick="openModal('https://i.imgur.com/uHcMdpX.jpeg')"
+                                 data-marca="ElfBar">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
                                 <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar NicKing Watermelon Cherry 40k</h3>
-                            <button onclick="event.stopPropagation(); addToCart(210, 'lfBar NicKing Watermelon Cherry 40k', 40000)"
+                            <button onclick="event.stopPropagation(); addToCart(510, 'lfBar NicKing Watermelon Cherry 40k', 40000)"
+                                  class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
+                                    $40.000 | Agregar
+                            </button>
+                            </div>
+                </div>-->
+              <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                style="background-image: url('https://i.imgur.com/uHcMdpX.jpeg');"
+                onclick="openModal('https://i.imgur.com/uHcMdpX.jpeg')"
+                data-marca="ElfBar">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar NicKing Watermelon Cherry 40k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>
+
+                     <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                             style="background-image: url('https://i.imgur.com/AkDdyim.jpeg');"
+                                 onclick="openModal('https://i.imgur.com/AkDdyim.jpeg')"
+                                 data-marca="ElfBar">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
+                                <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar Nic King Sour BlackBerry Candy 40k</h3>
+                            <button onclick="event.stopPropagation(); addToCart(526, 'ElfBar Nic King Sour BlackBerry Candy 40k', 40000)"
                                   class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
                                     $40.000 | Agregar
                             </button>
                             </div>
                 </div>
-                
-                     <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+     style="background-image: url('https://i.imgur.com/AkDdyim.jpeg');"
+     onclick="openModal('https://i.imgur.com/AkDdyim.jpeg')"
+     data-marca="ElfBar">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar Nic King Sour BlackBerry Candy 40k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>-->
+
+
+    <!--COMIENZA SWEET KING-->
+    
+                <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
                              style="background-image: url('https://i.imgur.com/V3SwSkX.jpeg');"
-                                 onclick="openModal('https://i.imgur.com/V3SwSkX.jpeg')">
-                                <!--<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>-->
+                                 onclick="openModal('https://i.imgur.com/V3SwSkX.jpeg')"
+                                 data-marca="ElfBar">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
                                 <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar SweetKing Lemon Heads 40k</h3>
-                            <button onclick="event.stopPropagation(); addToCart(211, 'ElfBar SweetKing Lemon Heads 40k', 40000)"
+                            <button onclick="event.stopPropagation(); addToCart(511, 'ElfBar SweetKing Lemon Heads 40k', 40000)"
                                   class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
                                     $40.000 | Agregar
                             </button>
                             </div>
                 </div>
+                <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                style="background-image: url('https://i.imgur.com/V3SwSkX.jpeg');"
+                onclick="openModal('https://i.imgur.com/V3SwSkX.jpeg')"
+                data-marca="ElfBar">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">ElfBar SweetKing Lemon Heads 40k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>-->
 
-
-                     <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+<!--COMIENZA LISTA DE IGNITE-->
+    
+                 <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
                              style="background-image: url('https://i.imgur.com/xBUDUAb.jpeg');"
-                                 onclick="openModal('https://i.imgur.com/xBUDUAb.jpeg')">
-                                <!--<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>-->
+                                 onclick="openModal('https://i.imgur.com/xBUDUAb.jpeg')"
+                                 data-marca="Ignite">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
                                 <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Ignite Ice Grape Peach 40k</h3>
-                            <button onclick="event.stopPropagation(); addToCart(212, 'Ignite Ice Grape Peach 40k', 40000)"
+                            <button onclick="event.stopPropagation(); addToCart(512, 'Ignite Ice Grape Peach 40k', 40000)"
                                   class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
                                     $40.000 | Agregar
                             </button>
                             </div>
                 </div>
+                <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                style="background-image: url('https://i.imgur.com/xBUDUAb.jpeg');"
+                onclick="openModal('https://i.imgur.com/xBUDUAb.jpeg')"
+                data-marca="Ignite">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Ignite Ice Grape Peach 40k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>-->
 
 
-                     <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
                              style="background-image: url('https://i.imgur.com/dunP7da.jpeg');"
-                                 onclick="openModal('https://i.imgur.com/dunP7da.jpeg')">
-                                <!--<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>-->
+                                 onclick="openModal('https://i.imgur.com/dunP7da.jpeg')"
+                                 data-marca="Ignite">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
                                 <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Ignite Ice Strawberry Kiwi 40k</h3>
-                            <button onclick="event.stopPropagation(); addToCart(213, 'Ignite Ice Strawberry Kiwi 40k', 40000)"
+                            <button onclick="event.stopPropagation(); addToCart(513, 'Ignite Ice Strawberry Kiwi 40k', 40000)"
                                   class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
                                     $40.000 | Agregar
                             </button>
                             </div>
                 </div>
+                <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                style="background-image: url('https://i.imgur.com/dunP7da.jpeg');"
+                onclick="openModal('https://i.imgur.com/dunP7da.jpeg')"
+                data-marca="Ignite">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Ignite Ice Strawberry Kiwi 40k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>-->
 
-                    <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
                              style="background-image: url('https://i.imgur.com/PhEVVkZ.jpeg');"
-                                 onclick="openModal('https://i.imgur.com/PhEVVkZ.jpeg')">
-                                <!--<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>-->
+                                 onclick="openModal('https://i.imgur.com/PhEVVkZ.jpeg')"
+                                 data-marca="Ignite">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
                                 <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Ignite Ice Watermelon 40k</h3>
-                            <button onclick="event.stopPropagation(); addToCart(214, 'Ignite Ice Watermelon 40k', 40000)"
+                            <button onclick="event.stopPropagation(); addToCart(514, 'Ignite Ice Watermelon 40k', 40000)"
                                   class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
                                     $40.000 | Agregar
                             </button>
                             </div>
                 </div>
+                <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                style="background-image: url('https://i.imgur.com/PhEVVkZ.jpeg');"
+                onclick="openModal('https://i.imgur.com/PhEVVkZ.jpeg')"
+                data-marca="Ignite">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Ignite Ice Watermelon 40k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000  | Agotado
+        </button>                 
+    </div>
+</div>-->
 
-                    <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
                              style="background-image: url('https://i.imgur.com/VSyOX4C.jpeg');"
-                                 onclick="openModal('https://i.imgur.com/VSyOX4C.jpeg')">
-                                <!--<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>-->
+                                 onclick="openModal('https://i.imgur.com/VSyOX4C.jpeg')"
+                                 data-marca="Ignite">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
-                                <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Ignite v250 Peach Mango 40k</h3>
-                            <button onclick="event.stopPropagation(); addToCart(215, 'Ignite v250 Peach Mango 40k', 35000)"
+                                <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Ignite v250 Peach Mango 25k</h3>
+                            <button onclick="event.stopPropagation(); addToCart(415, 'Ignite v250 Peach Mango 25k', 35000)"
                                   class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
                                     $35.000 | Agregar
                             </button>
                             </div>
                 </div>
+                <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                style="background-image: url('https://i.imgur.com/VSyOX4C.jpeg');"
+                onclick="openModal('https://i.imgur.com/VSyOX4C.jpeg')"
+                data-marca="Ignite">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Ignite v250 Peach Mango 25k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $35.000 | Agotado
+        </button>                 
+    </div>
+</div>-->
 
-                
                     <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                             style="background-image: url('https://i.imgur.com/0nJRMlD.jpeg');"
+                                 onclick="openModal('https://i.imgur.com/0nJRMlD.jpeg')"
+                                 data-marca="Ignite">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
+                                <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Ignite Ice Strawberry Apple Watermelon 40k</h3>
+                            <button onclick="event.stopPropagation(); addToCart(523, 'Ignite Ice Strawberry Apple Watermelon 40k', 40000)"
+                                  class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
+                                    $40.000 | Agregar
+                            </button>
+                            </div>
+                </div>
+                <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+     style="background-image: url('https://i.imgur.com/0nJRMlD.jpeg');"
+     onclick="openModal('https://i.imgur.com/0nJRMlD.jpeg')"
+     data-marca="Ignite">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Ignite Ice Strawberry Apple Watermelon 40k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>-->                
+                
+                <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                             style="background-image: url('https://i.imgur.com/zAHkEOL.jpeg');"
+                                 onclick="openModal('https://i.imgur.com/zAHkEOL.jpeg')"
+                                 data-marca="Ignite">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
+                                <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Ignite Ice PineApple Kiwi Dragon Fruit 40k</h3>
+                            <button onclick="event.stopPropagation(); addToCart(524, 'Ignite Ice PineApple Kiwi Dragon Fruit 40k', 40000)"
+                                  class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
+                                    $40.000 | Agregar
+                            </button>
+                            </div>
+                </div>
+                <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+     style="background-image: url('https://i.imgur.com/zAHkEOL.jpeg');"
+     onclick="openModal('https://i.imgur.com/zAHkEOL.jpeg')"
+     data-marca="Ignite">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Ignite Ice PineApple Kiwi Dragon Fruit 40k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>-->      
+
+                 <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                             style="background-image: url('https://i.imgur.com/Q65toTE.jpeg');"
+                                 onclick="openModal('https://i.imgur.com/Q65toTE.jpeg')"
+                                 data-marca="Ignite">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
+                                <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Ignite Ice Banana Cherry 40k</h3>
+                            <button onclick="event.stopPropagation(); addToCart(525, 'Ignite Ice Banana Cherry 40k', 40000)"
+                                  class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
+                                    $40.000 | Agregar
+                            </button>
+                            </div>
+                </div>
+                <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+     style="background-image: url('https://i.imgur.com/Q65toTE.jpeg');"
+     onclick="openModal('https://i.imgur.com/Q65toTE.jpeg')"
+     data-marca="Ignite">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Ignite Ice Banana Cherry 40k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>-->
+
+    
+    <!--COMINENZA LISTA DE LOST MARY-->
+                
+               <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
                              style="background-image: url('https://i.imgur.com/HEaWuW0.jpeg');"
-                                 onclick="openModal('https://i.imgur.com/HEaWuW0.jpeg')">
-                                <!--<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>-->
+                                 onclick="openModal('https://i.imgur.com/HEaWuW0.jpeg')"
+                                 data-marca="Lost Mary">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
                                 <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Lost Mary Mixer Apple Grape 30k</h3>
-                            <button onclick="event.stopPropagation(); addToCart(216, 'Lost Mary Mixer Apple Grape 30k', 40000)"
+                            <button onclick="event.stopPropagation(); addToCart(516, 'Lost Mary Mixer Apple Grape 30k', 40000)"
                                   class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
                                     $40.000 | Agregar
                             </button>
                             </div>
-                </div>
+                </div>-->
+                <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                style="background-image: url('https://i.imgur.com/HEaWuW0.jpeg');"
+                onclick="openModal('https://i.imgur.com/HEaWuW0.jpeg')"
+                data-marca="Lost Mary">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Lost Mary Mixer Apple Grape 30k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>
 
-                    <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
                              style="background-image: url('https://i.imgur.com/5ktxPBB.jpeg');"
-                                 onclick="openModal('https://i.imgur.com/5ktxPBB.jpeg')">
-                                <!--<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>-->
+                                 onclick="openModal('https://i.imgur.com/5ktxPBB.jpeg')"
+                                 data-marca="Lost Mary">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
                                 <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Lost Mary Mixer Blue Razz Ice 30k</h3>
-                            <button onclick="event.stopPropagation(); addToCart(217, 'Lost Mary Mixer Blue Razz Ice 30k', 40000)"
+                            <button onclick="event.stopPropagation(); addToCart(517, 'Lost Mary Mixer Blue Razz Ice 30k', 40000)"
                                   class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
                                     $40.000 | Agregar
                             </button>
                             </div>
                 </div>
+                <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                style="background-image: url('https://i.imgur.com/5ktxPBB.jpeg');"
+                onclick="openModal('https://i.imgur.com/5ktxPBB.jpeg')"
+                data-marca="Lost Mary">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Lost Mary Mixer Blue Razz Ice 30k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>-->
 
-                    <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
                              style="background-image: url('https://i.imgur.com/sWAArLX.jpeg');"
-                                 onclick="openModal('https://i.imgur.com/sWAArLX.jpeg')">
-                                <!--<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>-->
+                                 onclick="openModal('https://i.imgur.com/sWAArLX.jpeg')"
+                                 data-marca="Lost Mary">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
                                 <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Lost Mary Mixer Cherry Lemon 30k</h3>
-                            <button onclick="event.stopPropagation(); addToCart(218, 'Lost Mary Mixer Cherry Lemon 30k', 40000)"
+                            <button onclick="event.stopPropagation(); addToCart(518, 'Lost Mary Mixer Cherry Lemon 30k', 40000)"
                                   class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
                                     $40.000 | Agregar
                             </button>
                             </div>
-                </div>
+                </div>-->
+                <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                style="background-image: url('https://i.imgur.com/sWAArLX.jpeg');"
+                onclick="openModal('https://i.imgur.com/sWAArLX.jpeg')"
+                data-marca="Lost Mary">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Lost Mary Mixer Cherry Lemon 30k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>
 
-                    <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
                              style="background-image: url('https://i.imgur.com/8IgsYLL.jpeg');"
-                                 onclick="openModal('https://i.imgur.com/8IgsYLL.jpeg')">
-                                <!--<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>-->
+                                 onclick="openModal('https://i.imgur.com/8IgsYLL.jpeg')"
+                                 data-marca="Lost Mary">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
                                 <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Lost Mary Mixer GrapeFruit Green Tea 30k</h3>
-                            <button onclick="event.stopPropagation(); addToCart(219, 'Lost Mary Mixer GrapeFruit Green Tea 30k', 40000)"
+                            <button onclick="event.stopPropagation(); addToCart(519, 'Lost Mary Mixer GrapeFruit Green Tea 30k', 40000)"
                                   class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
                                     $40.000 | Agregar
                             </button>
                             </div>
                 </div>
+                <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                style="background-image: url('https://i.imgur.com/8IgsYLL.jpeg');"
+                onclick="openModal('https://i.imgur.com/8IgsYLL.jpeg')"
+                data-marca="Lost Mary">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Lost Mary Mixer GrapeFruit Green Tea 30k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>-->
 
-                    <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
                              style="background-image: url('https://i.imgur.com/3lpBVlq.jpeg');"
-                                 onclick="openModal('https://i.imgur.com/3lpBVlq.jpeg')">
-                                <!--<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>-->
+                                 onclick="openModal('https://i.imgur.com/3lpBVlq.jpeg')"
+                                 data-marca="Lost Mary">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
                                 <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Lost Mary Mixer GrapeFruit Lemon Lime 30k</h3>
-                            <button onclick="event.stopPropagation(); addToCart(220, 'Lost Mary Mixer GrapeFruit Lemon Lime 30k', 40000)"
+                            <button onclick="event.stopPropagation(); addToCart(520, 'Lost Mary Mixer GrapeFruit Lemon Lime 30k', 40000)"
                                   class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
                                     $40.000 | Agregar
                             </button>
                             </div>
                 </div>
+                <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                style="background-image: url('https://i.imgur.com/3lpBVlq.jpeg');"
+                onclick="openModal('https://i.imgur.com/3lpBVlq.jpeg')"
+                data-marca="Lost Mary">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Lost Mary Mixer GrapeFruit Lemon Lime 30k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>-->
 
-                    <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
                              style="background-image: url('https://i.imgur.com/AxrEvN3.jpeg');"
-                                 onclick="openModal('https://i.imgur.com/AxrEvN3.jpeg')">
-                                <!--<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>-->
+                                 onclick="openModal('https://i.imgur.com/AxrEvN3.jpeg')"
+                                 data-marca="Lost Mary">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
                                 <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Lost Mary Mixer Red Raspberry Strawberry 30k</h3>
-                            <button onclick="event.stopPropagation(); addToCart(221, 'Lost Mary Mixer Red Raspberry Strawberry 30k', 40000)"
+                            <button onclick="event.stopPropagation(); addToCart(521, 'Lost Mary Mixer Red Raspberry Strawberry 30k', 40000)"
                                   class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
                                     $40.000 | Agregar
                             </button>
                             </div>
-                </div>
+                </div>-->
+                <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                style="background-image: url('https://i.imgur.com/AxrEvN3.jpeg');"
+                onclick="openModal('https://i.imgur.com/AxrEvN3.jpeg')"
+                data-marca="Lost Mary">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Lost Mary Mixer Red Raspberry Strawberry 30k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>
 
-                    <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                <div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
                              style="background-image: url('https://i.imgur.com/apMYrju.jpeg');"
-                                 onclick="openModal('https://i.imgur.com/apMYrju.jpeg')">
-                                <!--<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>-->
+                                 onclick="openModal('https://i.imgur.com/apMYrju.jpeg')"
+                                 data-marca="Lost Mary">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 pointer-events-none"></div>
                             <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-10">
                                 <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Lost Mary Mixer Watermelon B-Pop 30k</h3>
-                            <button onclick="event.stopPropagation(); addToCart(222, 'Lost Mary Mixer Watermelon B-Pop 30k', 40000)"
+                            <button onclick="event.stopPropagation(); addToCart(522, 'Lost Mary Mixer Watermelon B-Pop 30k', 40000)"
                                   class="mb-1 inline-block bg-e-gold text-black px-4 py-2 text-sm rounded-sm font-bold cursor-pointer hover:bg-white transition duration-300 shadow-lg hover:shadow-yellow-500/50">
                                     $40.000 | Agregar
                             </button>
                             </div>
                 </div>
+                <!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+                style="background-image: url('https://i.imgur.com/apMYrju.jpeg');"
+                onclick="openModal('https://i.imgur.com/apMYrju.jpeg')"
+                data-marca="Lost Mary">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+        <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
+             <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
+        </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>        
+    <div class="absolute bottom-0 left-0 right-0 p-4 text-center z-30">
+        <h3 class="text-xl font-serif-fancy text-white mb-2 drop-shadow-md font-bold">Lost Mary Mixer Watermelon B-Pop 30k</h3>
+<button onclick="event.stopPropagation();" 
+                disabled
+                class="mb-1 inline-block bg-gray-600 text-gray-300 border border-gray-500 px-4 py-2 text-sm rounded-sm font-bold cursor-not-allowed opacity-90 shadow-none">
+            $40.000 | Agotado
+        </button>                 
+    </div>
+</div>-->
+
+
+
+
+
                 
-
-
 
 <!-- EJEMPLOS DE PRODUCTOS EN STOCK ----------------------------------------------------------------------------
                 
@@ -535,10 +1152,10 @@
                 
 <!--EJEMPLOS DE PRODUCTOS SIN STOCK ----------------------------------------------------------------------------
                 
-<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
+<!--<div class="product-card h-80 rounded-sm relative group overflow-hidden shadow-xl bg-cover bg-center cursor-pointer transform transition duration-300 hover:scale-[1.02]"
      style="background-image: url('URL_DEL_PRODUCTO');"
      onclick="openModal('URL_DEL_PRODUCTO')">
-<div class="absolute inset-0 z-20 flex items-center justify-center pointer-events-none bg-black/50 backdrop-grayscale">
+<div class="absolute inset-0 z-20 flex items-start justify-center pointer-events-none bg-black/50 backdrop-grayscale">
         <div class="border-2 border-white/90 px-6 py-2 -rotate-12 bg-red-700/80 backdrop-blur-sm shadow-2xl">
              <span class="text-white font-bold text-2xl tracking-widest drop-shadow-md uppercase">Sin Stock</span>
         </div>
@@ -552,11 +1169,10 @@
             $PRECIO SIN PUNTO | Agotado
         </button>                 
     </div>
-</div>
+</div>-->
 
 
-----------------------------------------------------------------------------------------------------------------                
--->
+<!-------------------------------------------------------------------------------------------------------------------->
 
 
 
@@ -620,7 +1236,7 @@
                     <input type="hidden" name="_subject" value="Nuevo Pedido - EyASur.Ok">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_default" value="Realizaste un nuevo pedido en https://eyasurok.github.io/">
+                    <input type="hidden" name="_default" value="Realizaste un nuevo pedido en EyASur.Ok">
 
                     <input type="hidden" name="Numero_Orden" id="hidden-order-id">
                     <input type="hidden" name="Detalle_Pedido" id="hidden-order-details">
@@ -969,7 +1585,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 
-
         
 
 
@@ -1004,7 +1619,36 @@ document.addEventListener('keydown', function(event) {
 });
 
 
+/**
+ * Función para filtrar los productos basándose en el atributo data-marca.
+ */
+function filterProductsByBrand() {
+    // 1. Obtener la marca seleccionada del menú desplegable
+    const select = document.getElementById("brandFilter");
+    const selectedBrand = select.value; // El valor es exactamente "ElfBar", "Lost Mary", etc.
 
+    // 2. Obtener todas las tarjetas de producto
+    const cards = document.getElementsByClassName("product-card");
+
+    // 3. Iterar sobre todas las tarjetas
+    for (let i = 0; i < cards.length; i++) {
+        const card = cards[i];
+        // Obtener el valor del atributo 'data-marca' para esta tarjeta
+        const cardBrand = card.getAttribute('data-marca');
+
+        // 4. Lógica de Filtrado
+        if (selectedBrand === "ALL") {
+            // Si el filtro es "ALL", muestra la tarjeta
+            card.style.display = ""; 
+        } else if (cardBrand === selectedBrand) {
+            // Si la marca de la tarjeta COINCIDE con la marca seleccionada, la muestra
+            card.style.display = "";
+        } else {
+            // Si no coincide, la oculta
+            card.style.display = "none";
+        }
+    }
+}
 
 
 
